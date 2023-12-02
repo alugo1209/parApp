@@ -14,7 +14,9 @@ export class ApiService {
   private urlApiLogin = 'https://score-test.contentgrp.com/api/login';
   private urlApi = 'https://aprendeyavanza2.com.co/ApiSilver/api/';
   public apiClients = 'Clients';
-  public apiClientsByUser = 'Clients/List';
+  public apiClientsByUser = 'Clients/List/';
+  public apiClientsById = 'Clients/';
+  public apiClientsClasification = 'Clients/Clasification/';
 
   constructor(public http: HttpClient
     , private storage: Storage
@@ -66,6 +68,12 @@ export class ApiService {
     this.storage.clear();
   }
 
+  public random_rgba() {
+    var o = Math.round, r = Math.random, s = 255;
+    //return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
+    return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',0.2)';
+  }
+
   public getLogin(user: string, pass: string) { 
     const params = new HttpParams({
       fromObject: {
@@ -77,6 +85,18 @@ export class ApiService {
   }
 
   public getClientes(token: string) {
-    return this.http.post(this.urlApi+this.apiClients,'',this.getOptions2(token));
+    return this.http.get(this.urlApi+this.apiClients,this.getOptions2(token));
+  }
+
+  public getClientsClasification(token: string, userId: string) {
+    return this.http.get(this.urlApi+this.apiClientsClasification+userId,this.getOptions2(token));
+  }
+
+  public getClientsByUser(token: string, userId: string) {
+    return this.http.get(this.urlApi+this.apiClientsByUser+userId,this.getOptions2(token));
+  }
+
+  public getClientsById(token: string, clienteId: string) {
+    return this.http.get(this.urlApi+this.apiClientsById+clienteId,this.getOptions2(token));
   }
 }

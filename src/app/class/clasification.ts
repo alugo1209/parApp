@@ -1,4 +1,7 @@
 export class Clasification {
-  clasificacionName: string | undefined;
-  count: number | undefined; 
+  clasificacionName!: string;
+  count!: number; 
+  backgroundColor!: string;
+  hoverBackgroundColor!: string;
+  hover = false;
 }

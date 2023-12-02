@@ -3,15 +3,17 @@
     <ion-card-header>
       <b>Rutero Relacional</b>
     </ion-card-header>
-    <ion-card-content>
-      <canvas #doughnutCanvas style="position: relative; height:20vh; width:40vw"></canvas>
-    </ion-card-content>
   </ion-card>
+  <ion-searchbar animated="true" 
+    placeholder="Clientes"
+    show-clear-button="always" 
+    [debounce]="1000" 
+    (ionInput)="handleInput($event)"></ion-searchbar>
   <ion-list id="inbox-list">
     <ion-card *ngFor="let p of lists; let i = index" >
-      <ion-card-content  (click)="goTo()"
-        [ngStyle]="{'background-color': p.backgroundColor}">
-        <ion-label>{{ p.clasificacionName }} / {{p.count}}</ion-label>
+      <ion-card-content  (click)="goTo(p.id)">
+        <ion-label>{{ p.enterpriseName }}</ion-label><br/>
+        <ion-label>{{ p.firstName }}</ion-label>
       </ion-card-content>
     </ion-card>
   </ion-list>
