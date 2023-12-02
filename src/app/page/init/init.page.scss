@@ -1,0 +1,21 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+
+}
+.contenido{
+  --background: url(../../../assets/img/slider-login1.png) 0 0/100% 90% no-repeat;
+  background-position: bottom center;
+  object-fit: cover;
+  width: 100%;
+  top: 10%;
+  height: 100vh;
+}
+
+.content-button{
+  width: 100%;
+  padding: 2%;
+  position: absolute;
+  bottom: 10%;
+}

@@ -1,0 +1,42 @@
+<ion-content class="main">
+  <div style="min-height: 20%;"></div>
+  <div class="contenPrin">
+  <ion-grid>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="12">
+        <ion-input type="email" placeholder="Correo Electrónico" [(ngModel)]="email" required></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="12">
+        <ion-input #passwordEyeRegister [type]="passwordTypeInput" placeholder="Contraseña" [(ngModel)]="password" required></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="1">
+        <ion-checkbox checked="{{politicas}}" [(ngModel)]="politicas" (ionChange)="validarDatos($event)">
+        </ion-checkbox>
+      </ion-col>
+      <ion-col size="11">
+        <ion-label class="politica">{{chPolitica}}</ion-label> <ion-label class="datos"> {{chDatos}}</ion-label>
+      </ion-col>
+    </ion-row>
+  <ion-row class="ion-align-items-center">
+    <ion-col size="12">
+      <ion-button color="warning" expand="block" (click)="home()" [disabled]="!btnDisable">{{btnIngresar}}</ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row class="ion-align-items-center">
+    <ion-col size="12">
+      <ion-label class="politica">{{lblInformacion}}</ion-label>
+      <ion-label class="datos">{{lblCorreo}}</ion-label>
+      <ion-label class="politica">{{lblresto}}</ion-label>
+    </ion-col>
+  </ion-row>
+</ion-grid></div>
+<div class="contentLogo">
+<ion-img class="imgLogoContent" src="assets/img/logo-content.png"></ion-img>
+</div>
+</ion-content>
+
+

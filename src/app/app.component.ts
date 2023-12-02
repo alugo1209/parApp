@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Storage } from '@ionic/storage';
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -6,13 +8,25 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public appPages = [
-    { title: 'Inbox', url: '/folder/inbox', icon: 'mail' },
-    { title: 'Outbox', url: '/folder/outbox', icon: 'paper-plane' },
-    { title: 'Favorites', url: '/folder/favorites', icon: 'heart' },
-    { title: 'Archived', url: '/folder/archived', icon: 'archive' },
-    { title: 'Trash', url: '/folder/trash', icon: 'trash' },
-    { title: 'Spam', url: '/folder/spam', icon: 'warning' },
+    { title: 'Inicio', url: '/main', icon: 'home' },
+    { title: 'Rutero Relacional', url: '/clients', icon:'pie-chart' },
+    { title: 'Educación', url: '/education', icon: 'book' },
+    { title: 'Notificaciones', url: '/notificacion', icon: 'notifications' },
+    { title: 'Contacto', url: '/contact', icon: 'call' },
+    { title: 'Perfil', url: '/perfil', icon: 'person-circle' },
+    { title: 'Salir', url: '/logout', icon: 'log-out' },
   ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-  constructor() {}
+  constructor(private storage: Storage) {
+    this.initializeApp();
+  }
+
+  private initializeApp() {
+    this.storage.create();
+    // this.platform.ready().then(async () => {
+    //   if (this.platform.is('android')) {
+    //     this.splashScreen.hide();
+    //   }
+    //   await this.statusBar.styleLightContent();
+    // });
+  }
 }
