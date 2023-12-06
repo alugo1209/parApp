@@ -1,7 +1,0 @@
-{
-  "name": "parApp",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}
