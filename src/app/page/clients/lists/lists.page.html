@@ -12,8 +12,8 @@
   <ion-list id="inbox-list">
     <ion-card *ngFor="let p of lists; let i = index" >
       <ion-card-content  (click)="goTo(p.id)">
-        <ion-label>{{ p.enterpriseName }}</ion-label><br/>
-        <ion-label>{{ p.firstName }}</ion-label>
+        <ion-label>{{ p.enterprise_Name }}</ion-label><br/>
+        <ion-label>{{ p.first_Name }}</ion-label>
       </ion-card-content>
     </ion-card>
   </ion-list>

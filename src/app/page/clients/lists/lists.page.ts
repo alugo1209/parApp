@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
-import { Client } from 'src/app/class/client';
+import { Client } from 'src/app/class/client/client';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
@@ -56,7 +56,7 @@ export class ListsPage implements OnInit {
     if (data.error) {
       this.dataService.showToast(this.toastCtrl, data.statusText);
     } else {
-      const dataTemp: Array<Client> = data;
+      const dataTemp: Array<Client> = data.result;
       this.lists = dataTemp;
       this.listsOriginal = dataTemp;
     }
@@ -66,7 +66,7 @@ export class ListsPage implements OnInit {
     const query = event.target.value.toLowerCase();
     this.lists = this.listsOriginal.filter((d) => 
     {
-      if(d.enterpriseName?.toLowerCase().includes(query) || d.firstName?.toLowerCase().includes(query)) {
+      if(d.enterprise_Name?.toLowerCase().includes(query) || d.first_Name?.toLowerCase().includes(query)) {
         return true;
       } else {
         return false;

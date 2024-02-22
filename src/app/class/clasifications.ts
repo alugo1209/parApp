@@ -1,4 +1,8 @@
 import { Clasification } from './clasification';
 export class Clasifications {
-  clasifications: Array<Clasification> = [];
+  statusCode: number | undefined;
+  isSuccess: boolean | undefined;
+  errorMessages: Array<any> | undefined;
+  result: Array<Clasification> = [];
+  totalPages: number | undefined;
 }

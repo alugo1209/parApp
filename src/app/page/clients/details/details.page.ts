@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ToastController } from '@ionic/angular';
-import { Client } from 'src/app/class/client';
+import { Client } from 'src/app/class/client/client';
+import { ClientDetail } from 'src/app/class/client/clientDetail';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
@@ -53,8 +54,8 @@ export class DetailsPage implements OnInit {
     if (data.error) {
       this.dataService.showToast(this.toastCtrl, data.statusText);
     } else {
-      const _client: Client = data;
-      this.client = _client;      
+      const dataTemp: ClientDetail = data;
+      this.client = dataTemp.result;      
     }
   }
 

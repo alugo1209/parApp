@@ -7,11 +7,11 @@
   <ion-list id="inbox-list">
     <ion-card >
       <ion-card-content>
-        <ion-label>Empresa: {{client.enterpriseName}}</ion-label><br/>
-        <ion-label>Nombres: {{client.firstName}} </ion-label><br/>
-        <ion-label>Documento: {{client.identification}} </ion-label><br/>
-        <ion-label>Clasificación: {{client.idClasificacion}} </ion-label><br/>
-        <ion-label>Dia: {{client.idDia}} </ion-label><br/>
+        <ion-label>Empresa: {{ client.enterprise_Name }}</ion-label><br/>
+        <ion-label>Nombres: {{ client.first_Name }} </ion-label><br/>
+        <ion-label>Documento: {{ client.identification }} </ion-label><br/>
+        <ion-label>Clasificación: {{ client.clasification?.clasif_Name }} </ion-label><br/>
+        <ion-label>Dia: {{ client.day?.day_Name }} </ion-label><br/>
       </ion-card-content>
     </ion-card>
   </ion-list>
