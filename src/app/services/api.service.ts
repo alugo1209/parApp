@@ -16,7 +16,10 @@ export class ApiService {
   public apiClients = 'Clients';
   public apiClientsByUser = 'Clients/List/';
   public apiClientsById = 'Clients/';
-  public apiClientsClasification = 'Clients/Clasification/';
+  public apiClientsClasification = 'Clasification/';
+  public apiClientsGetModuleByClasification = 'Clasification/GetModuleByClasification/';
+  public apiUsersGetListModuleVirtual = 'Users/GetListModuleVirtual/';
+  public apiUsersGetModule = 'Users/GetModule/';
 
   constructor(public http: HttpClient
     , private storage: Storage
@@ -99,4 +102,17 @@ export class ApiService {
   public getClientsById(token: string, clienteId: string) {
     return this.http.get(this.urlApi+this.apiClientsById+clienteId,this.getOptions2(token));
   }
+
+  public getModuleByClasification(token: string, clienteId: string) {
+    return this.http.get(this.urlApi+this.apiClientsGetModuleByClasification+clienteId,this.getOptions2(token));
+  }
+
+  public getListModuleVirtual(token: string, clienteId: string) {
+    return this.http.get(this.urlApi+this.apiClientsGetModuleByClasification+clienteId,this.getOptions2(token));
+  }
+
+  public getModule(token: string, modId: string, clienteId: string) {
+    return this.http.get(this.urlApi+this.apiUsersGetModule+modId+'/'+clienteId,this.getOptions2(token));
+  }
+
 }

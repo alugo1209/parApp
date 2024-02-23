@@ -1,5 +1,5 @@
 export class Clasification {
-  clasificacionName!: string;
+  clasif_Name!: string;
   count!: number; 
   backgroundColor!: string;
   hoverBackgroundColor!: string;

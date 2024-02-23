@@ -5,8 +5,7 @@ import { ToastController } from '@ionic/angular';
 import { Chart, ChartConfigurationCustomTypesPerDataset } from 'chart.js/auto';
 import { Dashboard } from 'src/app/class/chart/dashboard';
 import { Data } from 'src/app/class/chart/data';
-import { Clasification } from 'src/app/class/clasification';
-import { Clasifications } from 'src/app/class/clasifications';
+import { Clasification } from 'src/app/class/clasification/clasification';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
@@ -63,14 +62,14 @@ export class ClientsPage implements AfterViewInit {
     if (data.error) {
       this.dataService.showToast(this.toastCtrl, data.statusText);
     } else {
-      const dataTemp: Array<Clasification> = data;
+      const dataTemp: Array<Clasification> = data.result;
       this.lists = dataTemp;
       let dashboard: Dashboard = new Dashboard();
       let data_: Data = new Data();
       let dataset_: Dataset = new Dataset();
       dataset_.label = 'Clasificación: '
       this.lists.forEach(element => {
-        data_.labels.push(element.clasificacionName.replace('[\r]',''));
+        data_.labels.push(element.clasif_Name.replace('[\r]',''));
         dataset_.data.push(element.count);
         const color = this.dataService.random_rgba();
         dataset_.backgroundColor?.push(color);

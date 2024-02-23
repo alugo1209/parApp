@@ -1,7 +1,7 @@
 import { ApiService } from 'src/app/services/api.service';
 import { AfterContentInit, AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
-import { User } from 'src/app/class/user';
+import { User } from 'src/app/class/user/user';
 
 @Component({
   selector: 'app-main',

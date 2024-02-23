@@ -11,7 +11,7 @@
     <ion-card *ngFor="let p of lists; let i = index" >
       <ion-card-content  (click)="goTo()"
         [ngStyle]="{'background-color': p.backgroundColor}">
-        <ion-label>{{ p.clasificacionName }} / {{p.count}}</ion-label>
+        <ion-label>{{ p.clasif_Name }} / {{p.count}}</ion-label>
       </ion-card-content>
     </ion-card>
   </ion-list>

@@ -2,7 +2,7 @@ import { Router } from '@angular/router';
 import { MenuController, ToastController } from '@ionic/angular';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
-import { Token } from 'src/app/class/token';
+import { Token } from 'src/app/class/user/token';
 
 @Component({
   selector: 'app-login',
