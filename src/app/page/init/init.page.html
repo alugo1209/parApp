@@ -1,5 +1,5 @@
-<ion-content class="contenido">
+<ion-content class="contenido" [ngStyle]="{'--background': 'url('+ bgImage +') 0 0/100% 90% no-repeat'}">
   <div class="content-button">
-    <ion-button color="warning" expand="block" start (click)="login()">{{btnEnter}}</ion-button>
+    <ion-button expand="block" class="button-silver" start (click)="login()">{{btnEnter}}</ion-button>
   </div>
 </ion-content>

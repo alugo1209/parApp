@@ -63,6 +63,7 @@ export class LoginPage implements OnInit {
           this.dataService.setStorage('userId', '8c090cc0-91ea-4e99-8286-ca27bba421b0');
         } else {
           this.dataService.setStorage('userId', token.silver?.id);
+          console.log(token.silver?.id);          
         }        
         this.menuCtrl.enable(true);
         this.router.navigate(['/main']);

@@ -2,34 +2,22 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: 'Roboto-Regular', sans-serif;
 
 }
 
-.main{
+.mainLogin{
   width: 100%;
   height: 100vh;
-  margin: 25px auto;
+  --background: url('../../../assets/img/login.png') 0 0/100% 100% no-repeat;
 
-}
-.imgLogo{
-  width: 10vw;
-  padding: 20%;
-}
-.contentLogo{
-  width: 100%;
-  margin: 0;
-  background: #31306b93;
-  position: absolute;
-  bottom: 0;
-  padding: 10px;
-}
-.imgLogoContent{
-  display: block;
-  width: 20%;
-  margin-left: auto;
-  margin-right: auto;
-
+  .contenPrin{
+    position: absolute;
+    bottom: 0 !important;
+    color: silver;
+    font-weight: bold;
+    font-size: 16px !important;
+  }
 }
 
 ion-col{

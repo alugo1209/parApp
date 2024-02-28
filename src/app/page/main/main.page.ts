@@ -11,9 +11,10 @@ import { User } from 'src/app/class/user/user';
 export class MainPage implements OnInit, AfterContentInit, AfterViewInit, OnDestroy {
 
   public appPages = [
-    { title: 'Rutero Relacional', url: '/clients', icon:'pie-chart' },
-    { title: 'Educación', url: '/education', icon: 'book' },
-    { title: 'Notificaciones', url: '/notificacion', icon: 'notifications' },
+    { title: 'Rutero Relacional', url: '/clients', icon:'pie-chart', imagen: 'rutero' },
+    { title: 'Educación', url: '/education', icon: 'book', imagen: 'educacion' },
+    { title: 'Experiencias', url: '/notificacion', icon: 'notifications' , imagen: 'experiencias'},
+    // { title: 'Juegos', url: '/juegos', icon: 'games' , imagen: 'juegos-serios'},
     // { title: 'Contacto', url: '/contact', icon: 'call' }
   ];
 

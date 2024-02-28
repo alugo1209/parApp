@@ -11,6 +11,7 @@ import { ApiService } from 'src/app/services/api.service';
 export class InitPage implements OnInit, AfterContentInit, AfterViewInit, OnDestroy {
 
   btnEnter ='INGRESAR';
+  bgImage = 'assets/img/loading.png';
 
   constructor(
     private router: Router

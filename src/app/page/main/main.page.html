@@ -7,7 +7,8 @@
       <ion-card-content >
         <ion-item class="contentCard" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
           <ion-label>{{ p.title }}</ion-label>
-          <ion-icon class="iconList" [name]="p.icon + '-outline'" slot="end"></ion-icon>
+          <!-- <ion-icon class="iconList" [name]="p.icon + '-outline'" slot="end"></ion-icon> -->
+          <ion-img [src]="'assets/img/' + p.imagen + '.png'" slot="end" class="imgLogo1"/>
         </ion-item>
       </ion-card-content>
     </ion-card>

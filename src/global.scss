@@ -25,12 +25,15 @@
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
 
+@font-face { font-family: 'appfont'; font-style: normal; font-weight: normal; src: url('./assets/fonts/Roboto-Regular.ttf'); }
+
 .imgLogo{
-  width: 100%;
-  height: 26px;
-  ion-img::part(image) {
-    margin: auto 0 !important;
-  }
+  height: 10vh !important;
+  padding: 5px !important;
+}
+.imgLogo1{
+  width: 10vh !important;
+  padding: 5px !important;
 }
 
 .divEducation {
@@ -41,7 +44,7 @@
   }
 
   .etiquetaAmarilla {
-    background-color: #FFAA37;
+    background-color: #E7E7E7;
     color: whitesmoke;
     margin: auto 0;
     text-align: center;
@@ -54,7 +57,7 @@
 }
 
 .educationLinkVT{
-  color: #FFAA37;
+  color: #E7E7E7;
   text-decoration-line: none;
   font-weight: bold;
 }
@@ -78,16 +81,16 @@
 
 .contenidoHeader{
   width: 100%;
-  height: 6%;
-  padding: 2% auto;
+  padding: 0 auto;
+  margin: 0;
 }
 
 .iconListPrincipal, ion-menu-button{
-  color: #FFAA37 !important;
+  color: #E7E7E7 !important;
 }
 
 .contentCardP{
-  background-color: #FFAA37 !important;
+  background-color: #E7E7E7 !important;
   font-size: 20px;
   color: black !important;
   font-weight: bold;
@@ -96,8 +99,8 @@
   }
 
   ion-item {
-    --background-color: #FFAA37 !important;
-    --background: #FFAA37 !important;
+    --background-color: #E7E7E7 !important;
+    --background: #E7E7E7 !important;
     color: inherit !important;
   }
 }
@@ -107,6 +110,19 @@ ion-progress-bar::part(track) {
 }
 
 ion-progress-bar::part(progress) {
-  background: #FFAA37;
+  background: #E7E7E7;
 }
 
+.content-button{
+  width: 100%;
+  padding: 2%;
+  position: absolute;
+  bottom: 10%;
+}
+
+.button-silver{
+  --background: #E7E7E7 !important;
+  color: #010927;
+  font-weight: bold;
+  margin: 10px !important;
+}

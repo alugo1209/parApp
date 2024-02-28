@@ -10,14 +10,14 @@
   <ion-list id="inbox-list">
     <ion-card *ngFor="let p of lists; let i = index" >
       <ion-card-content  (click)="goTo()"
-        [ngStyle]="{'background-color': p.backgroundColor}">
+        [ngStyle]="{'background-color': p.backgroundColor, 'color': 'black', 'font-weight': 'bold'}">
         <ion-label>{{ p.clasif_Name }} / {{p.count}}</ion-label>
       </ion-card-content>
     </ion-card>
   </ion-list>
   <ion-card>
     <div class="content-button">
-      <ion-button expand="block" start (click)="regresar()">REGRESAR</ion-button>
+      <ion-button class="button-silver" expand="block" start (click)="regresar()">REGRESAR</ion-button>
     </div>
   </ion-card>
   <ion-card>
