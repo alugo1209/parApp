@@ -3,6 +3,7 @@ import { MenuController, ToastController } from '@ionic/angular';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { Token } from 'src/app/class/user/token';
+import { LogoService } from 'src/app/services/logo.service';
 
 @Component({
   selector: 'app-login',
@@ -37,6 +38,7 @@ export class LoginPage implements OnInit {
     , private toastCtrl: ToastController
     , public dataService: ApiService
     , public menuCtrl: MenuController
+    , public logoService: LogoService
   ) {}
 
   private getData() {
@@ -59,6 +61,10 @@ export class LoginPage implements OnInit {
         this.dataService.setStorage('token', token.token);
         this.dataService.setStorage('user', token.user);
         this.dataService.setStorage('tokenFull', token);
+        this.dataService.setStorage('logo', token.company?.logo);
+        this.dataService.setStorage('css', token.company?.css);
+        this.dataService.setStorage('id', token.user?.id);
+        this.logoService.setLogo(token.company?.logo);
         if(token.user?.email === 'user@proyectopar.com') {
           this.dataService.setStorage('userId', '8c090cc0-91ea-4e99-8286-ca27bba421b0');
         } else {

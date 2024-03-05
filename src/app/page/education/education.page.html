@@ -1,13 +1,23 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>education</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">education</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="contenidoDiv">
+  <ion-card>
+    <ion-card-header>
+      <p class="tituloPage">Educación</p>
+    </ion-card-header>
+  </ion-card>
+  <ion-list id="inbox-list">
+    <ion-card *ngFor="let p of lists; let i = index">
+      <ion-card-content>
+        <ion-label>
+          {{p.module.modu_Name}}
+          {{p.module.modu_Id}}
+        </ion-label>
+        <app-detail-virtual [modId]="p.module.modu_Id" [userId]="userId" [token]="token"></app-detail-virtual>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+  <ion-card class="contentDiv-button">
+    <div>
+      <ion-button class="button-silver" expand="block" start (click)="regresar()">REGRESAR</ion-button>
+    </div>
+  </ion-card>
 </ion-content>

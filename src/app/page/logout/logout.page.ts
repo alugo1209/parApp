@@ -2,6 +2,7 @@ import { AfterContentInit, AfterViewInit, Component, OnDestroy, OnInit } from '@
 import { Router } from '@angular/router';
 import { MenuController } from '@ionic/angular';
 import { ApiService } from 'src/app/services/api.service';
+import { LogoService } from 'src/app/services/logo.service';
 
 @Component({
   selector: 'app-logout',
@@ -14,11 +15,14 @@ export class LogoutPage implements OnInit, AfterContentInit, AfterViewInit, OnDe
 
   constructor(private router: Router
     , public menuCtrl: MenuController
-    , private dataService: ApiService) { }
+    , private dataService: ApiService
+    , private logoService: LogoService
+    ) { }
 
   public metodoSalir(){
     this.dataService.clearStorage();
     this.menuCtrl.enable(false);
+    this.logoService.resetLogo();
     this.router.navigate(['/'], { replaceUrl: true });
   }
 

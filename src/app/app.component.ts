@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Storage } from '@ionic/storage';
+import { LogoService } from './services/logo.service';
 
 @Component({
   selector: 'app-root',
@@ -16,8 +17,12 @@ export class AppComponent {
     { title: 'Perfil', url: '/perfil', icon: 'person-circle' },
     { title: 'Salir', url: '/logout', icon: 'log-out' },
   ];
-  constructor(private storage: Storage) {
+
+  logo = "";
+
+  constructor(private storage: Storage, public logoService: LogoService) {
     this.initializeApp();
+    this.logo = logoService.getLogo();
   }
 
   private initializeApp() {

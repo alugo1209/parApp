@@ -2,6 +2,7 @@ import { AfterContentInit, AfterViewInit, Component, OnDestroy, OnInit } from '@
 import { Router } from '@angular/router';
 import { MenuController } from '@ionic/angular';
 import { ApiService } from 'src/app/services/api.service';
+import { LogoService } from 'src/app/services/logo.service';
 
 @Component({
   selector: 'app-init',
@@ -17,6 +18,7 @@ export class InitPage implements OnInit, AfterContentInit, AfterViewInit, OnDest
     private router: Router
     , public menuCtrl: MenuController
     , private dataService: ApiService
+    , public logoService: LogoService
     ) { }
 
   public login(){

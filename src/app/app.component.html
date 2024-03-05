@@ -19,7 +19,7 @@
         <ion-buttons slot="end">
           <ion-menu-button></ion-menu-button>
         </ion-buttons>
-        <ion-img class="imgLogo" slot="start" src="assets/img/logo-content.png" />
+        <ion-img class="imgLogo" slot="start" [src]="logoService.getLogo()"  />
       </ion-toolbar>
     </ion-header>
     <ion-router-outlet></ion-router-outlet>

@@ -1,7 +1,7 @@
 <ion-content class="contenidoDiv">
   <ion-card>
     <ion-card-header>
-      <b>Rutero Relacional</b>
+      <p class="tituloPage">Rutero Relacional</p>
     </ion-card-header>
   </ion-card>
   <ion-searchbar animated="true" 
@@ -10,7 +10,7 @@
     [debounce]="1000" 
     (ionInput)="handleInput($event)"></ion-searchbar>
   <ion-list id="inbox-list">
-    <ion-card *ngFor="let p of lists; let i = index" >
+    <ion-card *ngFor="let p of lists; let i = index"  class="contentCardLi" >
       <ion-card-content  (click)="goTo(p.id)">
         <ion-label>{{ p.enterprise_Name }}</ion-label><br/>
         <ion-label>{{ p.first_Name }}</ion-label>
@@ -18,8 +18,8 @@
     </ion-card>
   </ion-list>
   <ion-card>
-    <div class="content-button">
-      <ion-button expand="block" start (click)="regresar()">REGRESAR</ion-button>
+    <div class="contentDiv-button-list">
+      <ion-button class="button-silver" expand="block" start (click)="regresar()">REGRESAR</ion-button>
     </div>
   </ion-card>
   <ion-card>

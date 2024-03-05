@@ -1,11 +1,11 @@
 <ion-content class="contenidoDiv">
   <ion-card>
     <ion-card-header>
-      <b>Detalle del Cliente</b>
+      <p class="tituloPage">Detalle del Cliente</p>
     </ion-card-header>
   </ion-card>
   <ion-list id="inbox-list">
-    <ion-card >
+    <ion-card  class="contentCardLi">
       <ion-card-content>
         <ion-label>Empresa: {{ client.enterprise_Name }}</ion-label><br/>
         <ion-label>Nombres: {{ client.first_Name }} </ion-label><br/>
@@ -15,9 +15,9 @@
       </ion-card-content>
     </ion-card>
   </ion-list>
-  <ion-card>
-    <div class="content-button">
-      <ion-button expand="block" start (click)="regresar()">REGRESAR</ion-button>
+  <ion-card class="contentDiv-button">
+    <div>
+      <ion-button class="button-silver" expand="block" start (click)="regresar()">REGRESAR</ion-button>
     </div>
   </ion-card>
 </ion-content>

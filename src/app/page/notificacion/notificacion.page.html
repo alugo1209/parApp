@@ -1,13 +1,22 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>notificacion</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">notificacion</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="contenidoDiv">
+  <ion-card>
+    <ion-card-header>
+      <p class="tituloPage">Notificaciones</p>
+    </ion-card-header>
+  </ion-card>
+  <ion-list id="inbox-list">
+    <ion-card *ngFor="let p of lists; let i = index" class="contentCardLi">
+      <ion-card-content (click)="viewWebPage(p.targetUrl)">
+        <ion-label>
+          <b>{{p.title}}</b> <br>
+          <p>{{p.message}}</p>
+        </ion-label>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+  <ion-card class="contentDiv-button">
+    <div>
+      <ion-button class="button-silver" expand="block" start (click)="regresar()">REGRESAR</ion-button>
+    </div>
+  </ion-card>
 </ion-content>

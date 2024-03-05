@@ -1,8 +1,8 @@
-import { ModuleNro } from './moduleNro';
+import { Notification } from './notification';
 export class Modules {
   statusCode: number | undefined;
   isSuccess: boolean | undefined;
   errorMessages: Array<any> | undefined;
-  result: Array<ModuleNro> = [];
+  result!: Notification;
   totalPages: number | undefined;
 }

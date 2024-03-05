@@ -19,7 +19,7 @@ export class ClientsPage implements AfterViewInit {
   token!: string;
   lists!: Array<Clasification>;
   @ViewChild('doughnutCanvas')
-  private doughnutCanvas!: ElementRef;
+  private doughnutCanvas!: ElementRef; 
   doughnutChart: any;
 
   constructor(

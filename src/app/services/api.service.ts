@@ -12,6 +12,7 @@ export class ApiService {
   //private proxyurl = ""; // borrar
   //private proxyurl = "https://cors-anywhere.herokuapp.com/"; // borrar
   private urlApiLogin = 'https://score-test.contentgrp.com/api/login';
+  private urlApiEdutuberVideos = 'https://score-test.contentgrp.com/api/edutuberVideos/';
   private urlApi = 'https://aprendeyavanza2.com.co/ApiSilver/api/';
   public apiClients = 'Clients';
   public apiClientsByUser = 'Clients/List/';
@@ -20,6 +21,7 @@ export class ApiService {
   public apiClientsGetModuleByClasification = 'Clasification/GetModuleByClasification/';
   public apiUsersGetListModuleVirtual = 'Users/GetListModuleVirtual/';
   public apiUsersGetModule = 'Users/GetModule/';
+  public apiUsersGetNotifications = 'Users/GetNotifications/';
 
   constructor(public http: HttpClient
     , private storage: Storage
@@ -87,6 +89,10 @@ export class ApiService {
     return this.http.post(this.urlApiLogin,params,this.getOptionsLogin());
   }
 
+  public edutuberVideos(token: string, id: string) {
+    return this.http.get(this.urlApiEdutuberVideos + id,this.getOptions2(token));
+  }
+
   public getClientes(token: string) {
     return this.http.get(this.urlApi+this.apiClients,this.getOptions2(token));
   }
@@ -108,11 +114,15 @@ export class ApiService {
   }
 
   public getListModuleVirtual(token: string, clienteId: string) {
-    return this.http.get(this.urlApi+this.apiClientsGetModuleByClasification+clienteId,this.getOptions2(token));
+    return this.http.get(this.urlApi+this.apiUsersGetListModuleVirtual+clienteId,this.getOptions2(token));
   }
 
-  public getModule(token: string, modId: string, clienteId: string) {
+  public getModule(token: string, modId: number, clienteId: string) {
     return this.http.get(this.urlApi+this.apiUsersGetModule+modId+'/'+clienteId,this.getOptions2(token));
+  }
+
+  public getNotifications(token: string) {
+    return this.http.get(this.urlApi+this.apiUsersGetNotifications,this.getOptions2(token));
   }
 
 }

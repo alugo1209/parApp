@@ -7,18 +7,6 @@ ion-content{
   color: #010927 !important;
 }
 
-.contentCard{
-  --background: #E7E7E7;
-  font-size: 20px;
-  color: #010927 !important;
-  font-weight: bold;
-  border-radius: 5%;
-  min-height: 10vh !important;
-  .iconList {
-    color: inherit !important;
-  }
-}
-
 ion-item, ion-card, .iconList{
   --color-hover: #010927 !important;
 }

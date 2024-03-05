@@ -1,7 +1,7 @@
 <ion-content class="contenidoDiv">
   <ion-card>
     <ion-card-header (click)="goTo()">
-      <b>Rutero Relacional</b>
+      <p class="tituloPage">Rutero Relacional</p>
     </ion-card-header>
     <ion-card-content>
       <canvas #doughnutCanvas style="position: relative; height:20vh; width:40vw"></canvas>
@@ -15,8 +15,8 @@
       </ion-card-content>
     </ion-card>
   </ion-list>
-  <ion-card>
-    <div class="content-button">
+  <ion-card class="contentDiv-button-list">
+    <div >
       <ion-button class="button-silver" expand="block" start (click)="regresar()">REGRESAR</ion-button>
     </div>
   </ion-card>
