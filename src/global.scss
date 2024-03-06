@@ -80,13 +80,14 @@
 }
 
 .contenidoHeader{
+  color: #010927 !important;
   width: 100%;
   padding: 0 auto;
   margin: 0;
 }
 
 .iconListPrincipal, ion-menu-button{
-  color: #E7E7E7 !important;
+  color: #010927 !important;
 }
 
 .contentCardP{
@@ -150,10 +151,11 @@ ion-progress-bar::part(progress) {
   width: 100%;
   padding: 5px 2px;
   margin: 0 auto !important;
+  display: inline;
 }
 
 .tituloPage {
-  font-size: 18px;
+  font-size: 3vh;
   font-weight: bold;
   margin: 0 auto;
 }
@@ -168,4 +170,44 @@ ion-progress-bar::part(progress) {
   color: #010927;
   font-weight: bold;
   margin: 10px !important;
+}
+
+.spanIframe{
+  margin: 5px;
+  width: 47%;
+  display: inline-grid;
+  border: 1px solid #010927;
+  iframe {
+    width: 100%;
+  }
+  p {
+    padding: 3px;
+    margin: 0 auto;
+    font-weight: bold;
+  }
+}
+
+.titleLabel{
+  display: inline-flex;
+  font-weight: bold;
+  font-size: large;
+  width: 100%;
+  #div1 {
+    width: 75%;
+  }
+  #div2 {
+    width: 25%;
+    text-align: center;
+    color: #010927;
+  }
+  
+  #div2:active{
+    background-color: #E7E7E7;
+  }
+}
+
+.titleLabel1{
+  font-weight: bold;
+  font-size: large;
+  width: 100%;
 }

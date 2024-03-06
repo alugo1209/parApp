@@ -1,5 +1,6 @@
-<div *ngFor="let p of lists; let i = index">
-  <p *ngFor="let t of p.topicsCourse">
-    {{t.toCo_Name}}
-  </p>
+<div>
+  <div *ngFor="let p of topicsCourse; let i = index" class="spanIframe">
+    <iframe src="https://view.genial.ly/6172e529e9ef7b0d4f3f00fb" ></iframe>
+    <p>{{p.toCo_Name}}</p>
+  </div>
 </div>

@@ -12,6 +12,7 @@ export class AppComponent {
     { title: 'Inicio', url: '/main', icon: 'home' },
     { title: 'Rutero Relacional', url: '/clients', icon:'pie-chart' },
     { title: 'Educación', url: '/education', icon: 'book' },
+    { title: 'Experiencia', url: '/experience', icon: 'film' },
     { title: 'Notificaciones', url: '/notificacion', icon: 'notifications' },
     { title: 'Contacto', url: '/contact', icon: 'call' },
     { title: 'Perfil', url: '/perfil', icon: 'person-circle' },

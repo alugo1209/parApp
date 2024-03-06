@@ -67,4 +67,7 @@ export class EducationPage implements AfterViewInit {
       this.router.navigate(['/main']);
     }
   
+    public gotoCategory(modId: any){
+      this.router.navigate(['/education/details/' + modId]);
+    }
 }

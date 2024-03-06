@@ -1,21 +1,21 @@
 <ion-content class="contenidoDiv">
   <ion-card>
     <ion-card-header>
-      <p class="tituloPage">Educación</p>
+      <p class="tituloPage">Experiencia</p>
     </ion-card-header>
   </ion-card>
-  <ion-list id="inbox-list">
+  <ion-list id="inbox-list" style="display: block;">
     <ion-card *ngFor="let p of lists; let i = index">
       <ion-card-content>
-        <ion-label class="titleLabel">
-          <div id="div1">{{p.module.modu_Name}}</div>
-          <div id="div2" (click)="gotoCategory(p.module.modu_Id)">Ver Todo</div>
+        <ion-label class="titleLabel1">
+          <div id="div1">Nombre: {{p.name}}</div>
+          <div id="div1">Descripcion: {{p.description}}</div>
+          <div id="div1">Likes: {{p.count_likes}}</div>
         </ion-label>
-        <app-detail-virtual [modId]="p.module.modu_Id" [userId]="userId" [token]="token"></app-detail-virtual>
       </ion-card-content>
     </ion-card>
     <ion-card class="contentDiv-button-list">
-      <div >
+      <div>
         <ion-button class="button-silver" expand="block" start (click)="regresar()">REGRESAR</ion-button>
       </div>
     </ion-card>

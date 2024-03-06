@@ -3,6 +3,6 @@ export class Modules {
   statusCode: number | undefined;
   isSuccess: boolean | undefined;
   errorMessages: Array<any> | undefined;
-  result: Array<ModuleDetail> = [];
+  result!: ModuleDetail;
   totalPages: number | undefined;
 }

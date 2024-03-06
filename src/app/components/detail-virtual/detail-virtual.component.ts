@@ -1,8 +1,11 @@
-import { NgForOf } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { IonicModule } from '@ionic/angular';
+import { AfterViewInit, Component, Input } from '@angular/core';
 import { ToastController } from '@ionic/angular';
 import { ModuleDetail } from 'src/app/class/education/moduleDetails/moduleDetail';
 import { ApiService } from 'src/app/services/api.service';
+import { TopicsCourse } from 'src/app/class/education/moduleDetails/topicsCourse';
 
 @Component({
   standalone: true,
@@ -10,22 +13,25 @@ import { ApiService } from 'src/app/services/api.service';
   templateUrl: './detail-virtual.component.html',
   styleUrls: ['./detail-virtual.component.scss'],
   imports: [
-      NgForOf
+    CommonModule,
+    FormsModule,
+    IonicModule,
   ],
 })
-export class DetailVirtualComponent implements OnInit {
+export class DetailVirtualComponent implements AfterViewInit {
 
   @Input() modId!: number;
   @Input() userId!: string;
   @Input() token!: string;
 
-  lists!: Array<ModuleDetail>;
+  details!: ModuleDetail;
+  topicsCourse: Array<TopicsCourse> = [];
 
   constructor(private toastCtrl: ToastController
     , public dataService: ApiService) {
     }
  
-  async ngOnInit() {
+  public ngAfterViewInit() {
     this.listModuleVirtual();
   }
   
@@ -40,10 +46,17 @@ export class DetailVirtualComponent implements OnInit {
     if (data.error) {
       this.dataService.showToast(this.toastCtrl, data.statusText);
     } else {
-      const dataTemp: Array<ModuleDetail> = data.result;
-      this.lists = dataTemp;
-      console.log(this.lists);
-
+      const dataTemp: ModuleDetail = data.result;
+      this.details = dataTemp;
+      let course: Array<TopicsCourse> = (this.details.topicsCourse);
+      let size = 2;
+      if(course.length < size){
+        size = course.length;
+      }
+      for (let index = 0; index < size; index++) {
+        let element: any = course.shift();
+        this.topicsCourse.push(element);
+      }
     }
   }
 
