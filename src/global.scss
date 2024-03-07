@@ -161,8 +161,9 @@ ion-progress-bar::part(progress) {
 }
 
 .tituloPageMain {
-  font-size: 18px;
+  font-size: medium;
   font-weight: bold;
+  padding: 3px;
 }
 
 .button-silver{
@@ -173,8 +174,8 @@ ion-progress-bar::part(progress) {
 }
 
 .spanIframe{
-  margin: 5px;
-  width: 47%;
+  margin: 3px;
+  width: 48%;
   display: inline-grid;
   border: 1px solid #010927;
   iframe {
@@ -184,6 +185,7 @@ ion-progress-bar::part(progress) {
     padding: 3px;
     margin: 0 auto;
     font-weight: bold;
+    font-size: small;
   }
 }
 
@@ -210,4 +212,15 @@ ion-progress-bar::part(progress) {
   font-weight: bold;
   font-size: large;
   width: 100%;
+}
+
+.titleLabel2{
+  font-size: medium;
+  padding: 3px;
+  #div1 {
+    text-align: left;
+  }
+  #div2 {
+    text-align: right;
+  }
 }

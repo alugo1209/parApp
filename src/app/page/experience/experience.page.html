@@ -6,13 +6,7 @@
   </ion-card>
   <ion-list id="inbox-list" style="display: block;">
     <ion-card *ngFor="let p of lists; let i = index">
-      <ion-card-content>
-        <ion-label class="titleLabel1">
-          <div id="div1">Nombre: {{p.name}}</div>
-          <div id="div1">Descripcion: {{p.description}}</div>
-          <div id="div1">Likes: {{p.count_likes}}</div>
-        </ion-label>
-      </ion-card-content>
+      <app-edutuber-videos [edutuber]="p"></app-edutuber-videos>
     </ion-card>
     <ion-card class="contentDiv-button-list">
       <div>

@@ -15,7 +15,7 @@ export class AppComponent {
     { title: 'Experiencia', url: '/experience', icon: 'film' },
     { title: 'Notificaciones', url: '/notificacion', icon: 'notifications' },
     { title: 'Contacto', url: '/contact', icon: 'call' },
-    { title: 'Perfil', url: '/perfil', icon: 'person-circle' },
+    { title: 'Perfil', url: '/profile', icon: 'person-circle' },
     { title: 'Salir', url: '/logout', icon: 'log-out' },
   ];
 

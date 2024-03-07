@@ -1,13 +1,38 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>profile</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">profile</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="contenidoDiv">
+  <ion-card>
+    <ion-card-header>
+      <p class="tituloPage">Perfil</p>
+    </ion-card-header>
+  </ion-card>
+  <ion-list id="inbox-list" >
+    <ion-card class="titleLabel2">
+      <div id="div1">
+        <label>Nombre:</label>
+      </div>
+      <div id="div2">
+        <b>{{user.name}}</b>
+      </div>      
+    </ion-card>
+    <ion-card class="titleLabel2">
+      <div id="div1">
+        <label>Email:</label>
+      </div>
+      <div id="div2">
+        <b>{{user.email}}</b>
+      </div>      
+    </ion-card>
+    <ion-card class="titleLabel2">
+      <div id="div1">
+        <label>Compañía:</label>
+      </div>
+      <div id="div2">
+        <b>{{company.name}}</b>
+      </div>      
+    </ion-card>
+    <ion-card class="contentDiv-button-list">
+      <div>
+        <ion-button class="button-silver" expand="block" start (click)="regresar()">REGRESAR</ion-button>
+      </div>
+    </ion-card>
+  </ion-list>
 </ion-content>

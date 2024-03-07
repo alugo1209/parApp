@@ -1,7 +1,7 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
-import { EdutuberVideo } from 'src/app/class/experience/edutuber-video';
+import { EdutuberVideo } from 'src/app/class/edutuber/edutuber-video';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({

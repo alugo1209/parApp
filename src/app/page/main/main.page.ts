@@ -1,7 +1,8 @@
-import { ApiService } from 'src/app/services/api.service';
 import { AfterContentInit, AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
 import { User } from 'src/app/class/user/user';
+import { ApiService } from 'src/app/services/api.service';
+import { LogoService } from 'src/app/services/logo.service';
 
 @Component({
   selector: 'app-main',
@@ -22,6 +23,7 @@ export class MainPage implements OnInit, AfterContentInit, AfterViewInit, OnDest
   name: string | undefined;
 
   constructor(private dataService: ApiService
+    , public logoService: LogoService
     , public menuCtrl: MenuController) { }
 
   ngOnInit() {
@@ -47,6 +49,12 @@ export class MainPage implements OnInit, AfterContentInit, AfterViewInit, OnDest
       if (data) {
         const user: User = data;
         this.name = user.name;
+      }
+    });
+    this.dataService.getStorage('logo')
+    .then((data: any) => {
+      if (data) {
+        this.logoService.setLogo(data);
       }
     });
   }

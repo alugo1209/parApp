@@ -34,17 +34,14 @@ const routes: Routes = [
   {
     path: 'init',
     loadChildren: () => import('./page/init/init.module').then( m => m.InitPageModule)
-  },  {
+  },
+  {
     path: 'education',
     loadChildren: () => import('./page/education/education.module').then( m => m.EducationPageModule)
   },
   {
     path: 'contact',
     loadChildren: () => import('./page/contact/contact.module').then( m => m.ContactPageModule)
-  },
-  {
-    path: 'perfil',
-    loadChildren: () => import('./page/perfil/perfil.module').then( m => m.PerfilPageModule)
   },
   {
     path: 'experience',
