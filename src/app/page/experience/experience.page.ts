@@ -57,7 +57,6 @@ export class ExperiencePage implements AfterViewInit {
       } else {
         const dataTemp: Array<EdutuberVideo> = data.result;
         this.lists = dataTemp;
-        console.log(this.lists);
       }
     }
 

@@ -1,16 +1,12 @@
 <ion-content class="contenidoDiv">
   <ion-card>
     <ion-card-header>
-      <p class="tituloPage">Categoria</p>
+      <p class="tituloPage">{{modu_Name}}</p>
     </ion-card-header>
   </ion-card>
   <ion-list id="inbox-list">
     <ion-card>
       <ion-card-content>
-        <ion-label class="titleLabel">
-          <div id="div1">{{modu_Name}}</div>
-          <div id="div2" (click)="gotoCategory(modulo.modu_Id)">Ver Todo</div>
-        </ion-label>
         <div *ngFor="let p of result; let i = index" class="spanIframe">
           <app-detail-virtual [toCoId]="p.toCo_Id"></app-detail-virtual>
         </div>

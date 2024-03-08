@@ -79,7 +79,6 @@ export class ClientsPage implements AfterViewInit {
       });   
       data_.datasets.push(dataset_);
       dashboard.data = data_;
-      console.log(this.lists);  
       this.doughnutChartMethod(dashboard);
     }
   }

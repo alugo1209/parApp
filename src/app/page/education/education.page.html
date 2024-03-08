@@ -1,30 +1,18 @@
 <ion-content class="contenidoDiv">
   <ion-card>
     <ion-card-header>
-      <p class="tituloPage">Educación</p>
+      <p class="tituloPage">{{modu_Name}}</p>
     </ion-card-header>
   </ion-card>
   <ion-list id="inbox-list">
-    <ion-card *ngFor="let p of lists; let i = index">
-      <ion-card-content>
-        <ion-label class="titleLabel">
-          <div id="div1">{{p.module.modu_Name}}</div>
-          <div id="div2" (click)="gotoCategory(p.module.modu_Id)">Ver Todo</div>
-        </ion-label>
-        <app-detail-virtual [modId]="p.module.modu_Id" [userId]="userId" [token]="token"></app-detail-virtual>
+    <ion-card *ngFor="let p of result; let i = index"  class="contentCardLi" >
+      <ion-card-content  (click)="gotoCategory(p.modu_Id)">
+        <ion-label>{{ p.clasi_Name }}</ion-label>
       </ion-card-content>
     </ion-card>
     <ion-card class="contentDiv-button-list">
-      <div >
-        <ion-button class="button-silver" expand="block" start (click)="regresar()">REGRESAR</ion-button>
-      </div>
-    </ion-card>
-    <ion-card>
       <div>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
+        <ion-button class="button-silver" expand="block" start (click)="regresar()">REGRESAR</ion-button>
       </div>
     </ion-card>
   </ion-list>

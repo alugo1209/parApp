@@ -1,7 +1,9 @@
 import { AfterViewInit, Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
-import { ModuleNroVirtual } from 'src/app/class/education/moduleVirtual/moduleNro';
+import { Module } from 'src/app/class/education/moduleByClient/module';
+import { Modules } from 'src/app/class/education/moduleByClient/modules';
+import { ModuleNro } from 'src/app/class/education/moduleByClient/moduleNro';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
@@ -13,8 +15,9 @@ export class EducationPage implements AfterViewInit {
 
   userId!: string;
   token!: string;
-  lists!: Array<ModuleNroVirtual>;
-  liststemp!: Array<ModuleNroVirtual>;
+  modulo!: ModuleNro;
+  result: Array<Module> = [];
+  modu_Name: string = "Categorias";
 
   constructor(
     private router: Router
@@ -24,7 +27,7 @@ export class EducationPage implements AfterViewInit {
     ngAfterViewInit() {
       this.getDataU();
     }
-  
+
     private getDataU() {
       this.dataService.getStorage('userId')
       .then((data: any) => {
@@ -40,13 +43,13 @@ export class EducationPage implements AfterViewInit {
       .then((data: any) => {
         if (data) {
           this.token = data;
-          this.listModuleVirtual();
+          this.getClientsById();
         }
       });
     }
   
-    private listModuleVirtual(){
-      this.dataService.getListModuleVirtual(this.token, this.userId)
+    private getClientsById(){
+      this.dataService.getModuleByClasification(this.token, this.userId)
       .subscribe((result) => {
         this.getDataResult(result);
       });
@@ -55,16 +58,18 @@ export class EducationPage implements AfterViewInit {
     private getDataResult(data: any) {
       if (data.error) {
         this.dataService.showToast(this.toastCtrl, data.statusText);
-      } else {
-        const dataTemp: Array<ModuleNroVirtual> = data.result;
-        this.lists = dataTemp;
+      } else {     
+        const dataTemp: Modules = data;
+        this.modulo = dataTemp.result;   
+        let tempResult: Array<Module> = this.modulo.result;  
+        this.result = tempResult;
       }
     }
 
     public regresar() {
       this.router.navigate(['/main']);
     }
-  
+
     public gotoCategory(modId: any){
       this.router.navigate(['/education/details/' + modId]);
     }

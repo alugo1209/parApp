@@ -7,14 +7,12 @@ import { IonicModule } from '@ionic/angular';
 import { EducationPageRoutingModule } from './education-routing.module';
 
 import { EducationPage } from './education.page';
-import { DetailVirtualComponent } from 'src/app/components/detail-virtual/detail-virtual.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    DetailVirtualComponent,
     EducationPageRoutingModule
   ],
   declarations: [EducationPage]

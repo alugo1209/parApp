@@ -4,15 +4,14 @@ import { ToastController } from '@ionic/angular';
 import { Module } from 'src/app/class/education/moduleDetails/module';
 import { ModuleDetail } from 'src/app/class/education/moduleDetails/moduleDetail';
 import { TopicsCourse } from 'src/app/class/education/moduleDetails/topicsCourse';
-
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
-  selector: 'app-details',
-  templateUrl: './details.page.html',
-  styleUrls: ['./details.page.scss'],
+  selector: 'app-details-all',
+  templateUrl: './details-all.page.html',
+  styleUrls: ['./details-all.page.scss'],
 })
-export class DetailsPage implements OnInit {
+export class DetailsAllPage implements OnInit {
 
   modId!: number;
   userId!: string;
@@ -81,10 +80,6 @@ export class DetailsPage implements OnInit {
     }
   
     public regresar() {
-      this.router.navigate(['/education']);
-    }  
-
-    public gotoCategory(modId: any){
-      this.router.navigate(['/education/details-all/' + modId]);
+      this.router.navigate(['/education/details/' + this.modId]);
     }
 }

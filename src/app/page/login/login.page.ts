@@ -73,7 +73,6 @@ export class LoginPage implements OnInit {
         //   console.log(token.silver?.id);          
         // }        
         this.dataService.setStorage('userId', token.silver?.id);
-        console.log(token.silver?.id);   
         this.menuCtrl.enable(true);
         this.router.navigate(['/main']);
       }
@@ -107,9 +106,6 @@ export class LoginPage implements OnInit {
         'La contraseña se encuentra vacio'
       );
     } else {
-      console.log(this.politicas);
-      console.log(this.email);
-      console.log(this.password);
       if (this.politicas) {
         this.btnDisable = true;
       } else {

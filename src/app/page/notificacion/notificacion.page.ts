@@ -48,7 +48,6 @@ export class NotificacionPage implements AfterViewInit {
       } else {
         const dataTemp: Array<Notification> = data.result;
         this.lists = dataTemp;
-        console.log(this.lists);
       }
     }
 

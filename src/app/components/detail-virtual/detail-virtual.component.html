@@ -1,6 +1,4 @@
 <div>
-  <div *ngFor="let p of topicsCourse; let i = index" class="spanIframe">
-    <iframe seamless sandbox="allow-scripts" [srcdoc]="p.toCo_Html" style="border: none" id="{{ 'iframe' + p.toCo_Id }}"></iframe>
-    <p>{{p.toCo_Name}}</p>
-  </div>
+  <iframe seamless sandbox="allow-scripts" [srcdoc]="topicsCourse.toCo_Html" style="border: none" id="{{ 'iframe' + toCoId }}"></iframe>
+  <p>{{topicsCourse.toCo_Name}}</p>
 </div>
