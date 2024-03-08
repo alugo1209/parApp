@@ -6,6 +6,7 @@ import { ToastController } from '@ionic/angular';
 import { ModuleDetail } from 'src/app/class/education/moduleDetails/moduleDetail';
 import { ApiService } from 'src/app/services/api.service';
 import { TopicsCourse } from 'src/app/class/education/moduleDetails/topicsCourse';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   standalone: true,
@@ -28,7 +29,8 @@ export class DetailVirtualComponent implements AfterViewInit {
   topicsCourse: Array<TopicsCourse> = [];
 
   constructor(private toastCtrl: ToastController
-    , public dataService: ApiService) {
+    , public dataService: ApiService
+    , private sanitizer: DomSanitizer) {
     }
  
   public ngAfterViewInit() {
@@ -55,6 +57,15 @@ export class DetailVirtualComponent implements AfterViewInit {
       }
       for (let index = 0; index < size; index++) {
         let element: any = course.shift();
+        element.toCo_Html = element.toCo_ContentVirtual;
+        element.toCo_Html = element.toCo_Html.replaceAll("height=\"800\"", "style=\"border: none\"");
+        // element.toCo_Html = element.toCo_Html.replaceAll("</html>", "");
+        // element.toCo_Html = element.toCo_Html.replaceAll("<head>", "");
+        // element.toCo_Html = element.toCo_Html.replaceAll("</head>", "");
+        // element.toCo_Html = element.toCo_Html.replaceAll("<body>", "");
+        // element.toCo_Html = element.toCo_Html.replaceAll("</body>", "");
+        element.toCo_Html = this.sanitizer.bypassSecurityTrustHtml(element.toCo_Html);
+        console.log(element.toCo_Html);
         this.topicsCourse.push(element);
       }
     }

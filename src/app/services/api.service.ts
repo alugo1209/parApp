@@ -117,8 +117,7 @@ export class ApiService {
     return this.http.get(this.urlApi+this.apiUsersGetListModuleVirtual+clienteId,this.getOptions2(token));
   }
 
-  public getModule(token: string, modId: number, clienteId: string) {
-    console.log(this.urlApi+this.apiUsersGetModule+modId+'/'+clienteId);    
+  public getModule(token: string, modId: number, clienteId: string) {  
     return this.http.get(this.urlApi+this.apiUsersGetModule+modId+'/'+clienteId,this.getOptions2(token));
   }
 

@@ -58,8 +58,6 @@ export class EducationPage implements AfterViewInit {
       } else {
         const dataTemp: Array<ModuleNroVirtual> = data.result;
         this.lists = dataTemp;
-        console.log(this.lists);
-
       }
     }
 
