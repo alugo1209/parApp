@@ -1,4 +1,4 @@
-export class Module {
+export class ModuleClient {
   clasi_Id!: number; 
   clasi_Name!: string;
   modu_Id!: number; 

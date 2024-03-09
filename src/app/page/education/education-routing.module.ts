@@ -9,11 +9,11 @@ const routes: Routes = [
     component: EducationPage
   },
   {
-    path: 'details/:id',
+    path: 'details/:catId/:modId',
     loadChildren: () => import('./details/details.module').then( m => m.DetailsPageModule)
   },
   {
-    path: 'details-all/:id',
+    path: 'details-all/:catId/:modId',
     loadChildren: () => import('./details-all/details-all.module').then( m => m.DetailsAllPageModule)
   }
 ];

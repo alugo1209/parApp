@@ -1,7 +1,7 @@
 import { AfterViewInit, Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
-import { Module } from 'src/app/class/education/moduleByClient/module';
+import { ModuleClient } from 'src/app/class/education/moduleByClient/module';
 import { Modules } from 'src/app/class/education/moduleByClient/modules';
 import { ModuleNro } from 'src/app/class/education/moduleByClient/moduleNro';
 import { ApiService } from 'src/app/services/api.service';
@@ -16,7 +16,7 @@ export class EducationPage implements AfterViewInit {
   userId!: string;
   token!: string;
   modulo!: ModuleNro;
-  result: Array<Module> = [];
+  result: Array<ModuleClient> = [];
   modu_Name: string = "Categorias";
 
   constructor(
@@ -61,8 +61,9 @@ export class EducationPage implements AfterViewInit {
       } else {     
         const dataTemp: Modules = data;
         this.modulo = dataTemp.result;   
-        let tempResult: Array<Module> = this.modulo.result;  
+        let tempResult: Array<ModuleClient> = this.modulo.result;  
         this.result = tempResult;
+        this.dataService.setStorage("category", this.result);
       }
     }
 
@@ -70,7 +71,7 @@ export class EducationPage implements AfterViewInit {
       this.router.navigate(['/main']);
     }
 
-    public gotoCategory(modId: any){
-      this.router.navigate(['/education/details/' + modId]);
+    public gotoCategory(catId: any, modId: any){
+      this.router.navigate(['/education/details/' + catId + '/' + modId]);
     }
 }

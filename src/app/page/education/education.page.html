@@ -6,7 +6,7 @@
   </ion-card>
   <ion-list id="inbox-list">
     <ion-card *ngFor="let p of result; let i = index"  class="contentCardLi" >
-      <ion-card-content  (click)="gotoCategory(p.modu_Id)">
+      <ion-card-content (click)="gotoCategory(p.clasi_Id, p.modu_Id)">
         <ion-label>{{ p.clasi_Name }}</ion-label>
       </ion-card-content>
     </ion-card>

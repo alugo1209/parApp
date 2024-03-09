@@ -1,6 +1,6 @@
-import { Module } from './module';
+import { ModuleClient } from './module';
 export class ModuleNro {
-  result!: Array<Module>;
+  result!: Array<ModuleClient>;
   id!: number; 
   exception!: any;
   status!: number;
