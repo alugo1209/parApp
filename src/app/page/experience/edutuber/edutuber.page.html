@@ -1,0 +1,21 @@
+<ion-content class="contenidoDiv">
+  <ion-card>
+    <ion-card-header>
+      <p class="tituloPage1">{{edutuber.name}}</p>
+    </ion-card-header>
+  </ion-card>
+  <ion-card id="inbox-list1">
+    <app-iframe-video [videoUrl]="videot"></app-iframe-video>
+    <ion-card>
+      <ion-label class="titleLabel2">
+        <div id="div1">Descripción: {{edutuber.description}}</div>
+        <div id="div1">Likes: {{edutuber.count_likes}}</div>
+      </ion-label>
+    </ion-card>
+  </ion-card>
+  <ion-card class="contentDiv-button-list">
+    <div>
+      <ion-button class="button-silver" expand="block" start (click)="regresar()">REGRESAR</ion-button>
+    </div>
+  </ion-card>
+</ion-content>

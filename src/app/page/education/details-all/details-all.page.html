@@ -6,7 +6,7 @@
       <p class="tituloPage1">{{modu_Name}}</p>
     </ion-card-header>
   </ion-card>
-  <ion-list id="inbox-list">
+  <ion-list id="inbox-list1">
     <ion-card>
       <ion-card-content>
         <div *ngFor="let p of result; let i = index" class="spanIframe">
@@ -14,10 +14,10 @@
         </div>
       </ion-card-content>
     </ion-card>
-    <ion-card class="contentDiv-button-list">
-      <div >
-        <ion-button class="button-silver" expand="block" start (click)="regresar()">REGRESAR</ion-button>
-      </div>
-    </ion-card>
   </ion-list>
+  <ion-card class="contentDiv-button-list">
+    <div >
+      <ion-button class="button-silver" expand="block" start (click)="regresar()">REGRESAR</ion-button>
+    </div>
+  </ion-card>
 </ion-content>

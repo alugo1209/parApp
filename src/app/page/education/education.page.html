@@ -4,16 +4,16 @@
       <p class="tituloPage">{{modu_Name}}</p>
     </ion-card-header>
   </ion-card>
-  <ion-list id="inbox-list">
+  <ion-list id="inbox-list1">
     <ion-card *ngFor="let p of result; let i = index"  class="contentCardLi" >
       <ion-card-content (click)="gotoCategory(p.clasi_Id, p.modu_Id)">
         <ion-label>{{ p.clasi_Name }}</ion-label>
       </ion-card-content>
     </ion-card>
-    <ion-card class="contentDiv-button-list">
-      <div>
-        <ion-button class="button-silver" expand="block" start (click)="regresar()">REGRESAR</ion-button>
-      </div>
-    </ion-card>
   </ion-list>
+  <ion-card class="contentDiv-button-list">
+    <div>
+      <ion-button class="button-silver" expand="block" start (click)="regresar()">REGRESAR</ion-button>
+    </div>
+  </ion-card>
 </ion-content>

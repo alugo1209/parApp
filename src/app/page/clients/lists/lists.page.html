@@ -9,25 +9,17 @@
     show-clear-button="always" 
     [debounce]="1000" 
     (ionInput)="handleInput($event)"></ion-searchbar>
-  <ion-list id="inbox-list">
+  <ion-list id="inbox-list1">
     <ion-card *ngFor="let p of lists; let i = index"  class="contentCardLi" >
       <ion-card-content  (click)="goTo(p.id)">
         <ion-label>{{ p.enterprise_Name }}</ion-label><br/>
         <ion-label>{{ p.first_Name }}</ion-label>
       </ion-card-content>
     </ion-card>
-    <ion-card>
-      <div class="contentDiv-button-list">
-        <ion-button class="button-silver" expand="block" start (click)="regresar()">REGRESAR</ion-button>
-      </div>
-    </ion-card>
-    <ion-card>
-      <div>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-      </div>
-    </ion-card>
   </ion-list>
+  <ion-card class="contentDiv-button-list">
+    <div >
+      <ion-button class="button-silver" expand="block" start (click)="regresar()">REGRESAR</ion-button>
+    </div>
+  </ion-card>
 </ion-content>

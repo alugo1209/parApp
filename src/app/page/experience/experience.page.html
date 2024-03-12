@@ -4,22 +4,37 @@
       <p class="tituloPage">Experiencia</p>
     </ion-card-header>
   </ion-card>
-  <ion-list id="inbox-list" style="display: block;">
-    <ion-card *ngFor="let p of lists; let i = index">
-      <app-edutuber-videos [edutuber]="p"></app-edutuber-videos>
-    </ion-card>
-    <ion-card class="contentDiv-button-list">
-      <div>
-        <ion-button class="button-silver" expand="block" start (click)="regresar()">REGRESAR</ion-button>
-      </div>
-    </ion-card>
-    <ion-card>
-      <div>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-      </div>
-    </ion-card>
+  <ion-list id="inbox-list1">
+    <ion-item-group>
+      <ion-item-divider>
+        <ion-label>Top</ion-label>
+      </ion-item-divider>
+      <ion-card *ngFor="let p of tops; let i = index">
+        <app-edutuber-videos [edutuber]="p" prefix="top"></app-edutuber-videos>
+      </ion-card>
+    </ion-item-group>
+    <ion-item-group>
+      <ion-item-divider>
+        <ion-label>Mejores Expeiencias</ion-label>
+      </ion-item-divider>
+      <ion-searchbar animated="true" 
+        placeholder="Buscar"
+        show-clear-button="always" 
+        [debounce]="1000" 
+        (ionInput)="handleInput($event)"></ion-searchbar>
+      <ion-card *ngFor="let p of lists; let i = index">
+        <app-edutuber-videos [edutuber]="p" prefix="all"></app-edutuber-videos>
+      </ion-card>
+    </ion-item-group>
   </ion-list>
+  <ion-card class="contentDiv-button-list">
+    <div>
+      <ion-button class="button-silver" expand="block" start (click)="regresar()">REGRESAR</ion-button>
+    </div>
+  </ion-card>
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button (click)="goNew()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

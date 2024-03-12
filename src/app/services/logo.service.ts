@@ -31,7 +31,7 @@ export class LogoService {
   }
 
   public getBgImage(){
-    this.bgImage = 'assets/img/portada_' + this.rdn + '.png';
+    //this.bgImage = 'assets/img/portada_' + this.rdn + '.png';
     return this.bgImage;
   }
 

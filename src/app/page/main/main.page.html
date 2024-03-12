@@ -2,7 +2,7 @@
   <ion-card class="tituloPageMain">
     Bienvenido,<br>{{name}}
   </ion-card>
-  <ion-list id="inbox-list">
+  <ion-list id="inbox-list1">
     <ion-card *ngFor="let p of appPages; let i = index" class="contentCard">
       <ion-card-content >
         <ion-item class="contentCard" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">

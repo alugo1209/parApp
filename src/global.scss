@@ -152,6 +152,7 @@ ion-progress-bar::part(progress) {
   padding: 5px 2px;
   margin: 0 auto !important;
   display: inline;
+  bottom: 12vh;
 }
 
 .tituloPage {
@@ -231,3 +232,22 @@ ion-progress-bar::part(progress) {
     text-align: right;
   }
 }
+
+#inbox-list1 {
+  margin-bottom: 12vh !important;
+}
+
+.video-responsive {
+	height: 0;
+	overflow: hidden;
+	padding-bottom: 56.25%;
+	padding-top: 30px;
+	position: relative;
+	}
+.video-responsive iframe, .video-responsive object, .video-responsive embed {
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	}

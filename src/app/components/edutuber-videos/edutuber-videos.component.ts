@@ -1,10 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { AfterViewInit, Component, Input } from '@angular/core';
-import { ToastController } from '@ionic/angular';
-import { ApiService } from 'src/app/services/api.service';
+import { Component, Input, OnInit } from '@angular/core';
 import { EdutuberVideo } from 'src/app/class/edutuber/edutuber-video';
+import { Router } from '@angular/router';
 
 @Component({
   standalone: true,
@@ -17,13 +16,19 @@ import { EdutuberVideo } from 'src/app/class/edutuber/edutuber-video';
     IonicModule,
   ],
 })
-export class EdutuberVideosComponent implements AfterViewInit {
+export class EdutuberVideosComponent implements OnInit {
 
   @Input() edutuber!: EdutuberVideo;
+  @Input() prefix: string = 'all';
+  imgVideo: string = 'https://ionicframework.com/docs/img/demos/thumbnail.svg';
 
-  constructor(private toastCtrl: ToastController
-    , public dataService: ApiService) { }
+  constructor(private router: Router) { }
 
-  ngAfterViewInit() {}
+  ngOnInit() {
+    this.imgVideo = this.edutuber.image;
+  }
 
+  public goVideo(id: any){
+    this.router.navigate(['/experience/edutuber/'+id]);
+  }
 }
