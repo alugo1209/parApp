@@ -25,13 +25,23 @@
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
 
-@font-face { font-family: 'appfont'; font-style: normal; font-weight: normal; src: url('./assets/fonts/Roboto-Regular.ttf'); }
+@font-face {
+  font-family: 'appfont';
+  font-style: normal;
+  font-weight: normal;
+  src: url('./assets/fonts/Roboto-Regular.ttf');
+}
 
-.imgLogo{
+* {
+  color: var(--text-principal,#010927) !important;
+}
+
+.imgLogo {
   height: 10vh !important;
   padding: 5px !important;
 }
-.imgLogo1{
+
+.imgLogo1 {
   width: 10vh !important;
   padding: 5px !important;
 }
@@ -39,6 +49,7 @@
 .divEducation {
   border-radius: 20px;
   border: 1px solid;
+
   ion-img::part(image) {
     border-radius: 20px 20px 0 0 !important;
   }
@@ -56,13 +67,13 @@
   }
 }
 
-.educationLinkVT{
+.educationLinkVT {
   color: #E7E7E7;
   text-decoration-line: none;
   font-weight: bold;
 }
 
-.divEducationBlack{
+.divEducationBlack {
   background-color: black;
   color: whitesmoke;
   margin: auto 0;
@@ -72,29 +83,58 @@
   border-radius: 10px !important;
 }
 
-.contenidoDiv{
+.contenidoDiv {
   width: 100%;
   margin-top: 5%;
   bottom: -10%;
   top: 10%;
 }
 
-.contenidoHeader{
-  color: #010927 !important;
+.contenidoHeader {
   width: 100%;
-  padding: 0 auto;
+  padding: 0;
   margin: 0;
 }
 
-.iconListPrincipal, ion-menu-button{
-  color: #010927 !important;
+.contenidoHeaderInit{
+  width: 100%;
+  padding: 0 !important;
+  margin: 0 !important;
+  .imgLogo {
+    background: url(assets/img/imagen_init2.png);
+    width: 100%;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  ion-buttons{
+    background: url(assets/img/imagen_init2.png);
+    padding: 0 !important;
+    margin: 0 !important;
+  }
 }
 
-.contentCardP{
+.contenidoHeaderlogin{
+  width: 100%;
+  padding: 0 !important;
+  margin: 0 !important;
+  .imgLogo {
+    background: url(assets/img/imagen_init3.png);
+    width: 100%;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  ion-buttons{
+    background: url(assets/img/imagen_init3.png);
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}
+
+.contentCardP {
   background-color: #E7E7E7 !important;
   font-size: 20px;
-  color: black !important;
   font-weight: bold;
+
   .iconList {
     color: inherit !important;
   }
@@ -106,21 +146,20 @@
   }
 }
 
-.contentCard{
+.contentCard {
   --background: #E7E7E7;
-  font-size: 20px;
-  color: #010927 !important;
   font-weight: bold;
-  border-radius: 5%;
+  font-size: large;
+  border-radius: 4%;
   min-height: 10vh !important;
+  
   .iconList {
     color: inherit !important;
   }
 }
 
-.contentCardLi{
+.contentCardLi {
   --background: #E7E7E7;
-  color: #010927 !important;
   border-radius: 5%;
 }
 
@@ -132,14 +171,14 @@ ion-progress-bar::part(progress) {
   background: #E7E7E7;
 }
 
-.content-button{
+.content-button {
   width: 100%;
   padding: 2%;
   position: absolute;
   bottom: 10%;
 }
 
-.contentDiv-button{
+.contentDiv-button {
   width: 100%;
   padding: 2%;
   position: absolute;
@@ -147,7 +186,7 @@ ion-progress-bar::part(progress) {
   margin: 0 !important;
 }
 
-.contentDiv-button-list{
+.contentDiv-button-list {
   width: 100%;
   padding: 5px 2px;
   margin: 0 auto !important;
@@ -173,22 +212,23 @@ ion-progress-bar::part(progress) {
   padding: 3px;
 }
 
-.button-silver{
+.button-silver {
   --background: #E7E7E7 !important;
-  color: #010927;
   font-weight: bold;
   margin: 10px !important;
 }
 
-.spanIframe{
+.spanIframe {
   margin: 3px;
   width: 48%;
   display: inline-grid;
   border: 1px solid #010927;
+
   iframe {
     width: 100%;
     height: 15vh;
   }
+
   p {
     padding: 3px;
     margin: 0 auto;
@@ -197,37 +237,40 @@ ion-progress-bar::part(progress) {
   }
 }
 
-.titleLabel{
+.titleLabel {
   display: inline-flex;
   font-weight: bold;
   font-size: large;
   width: 100%;
+
   #div1 {
     width: 75%;
   }
+
   #div2 {
     width: 25%;
     text-align: center;
-    color: #010927;
   }
-  
-  #div2:active{
+
+  #div2:active {
     background-color: #E7E7E7;
   }
 }
 
-.titleLabel1{
+.titleLabel1 {
   font-weight: bold;
   font-size: large;
   width: 100%;
 }
 
-.titleLabel2{
+.titleLabel2 {
   font-size: medium;
   padding: 3px;
+
   #div1 {
     text-align: left;
   }
+
   #div2 {
     text-align: right;
   }
@@ -238,16 +281,19 @@ ion-progress-bar::part(progress) {
 }
 
 .video-responsive {
-	height: 0;
-	overflow: hidden;
-	padding-bottom: 56.25%;
-	padding-top: 30px;
-	position: relative;
-	}
-.video-responsive iframe, .video-responsive object, .video-responsive embed {
-	height: 100%;
-	left: 0;
-	position: absolute;
-	top: 0;
-	width: 100%;
-	}
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  position: relative;
+}
+
+.video-responsive iframe,
+.video-responsive object,
+.video-responsive embed {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}

@@ -20,6 +20,7 @@ export class AppComponent {
   ];
 
   logo = "";
+  css = "";
 
   constructor(private storage: Storage, public logoService: LogoService) {
     this.initializeApp();

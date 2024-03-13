@@ -66,6 +66,7 @@ export class LoginPage implements OnInit {
         this.dataService.setStorage('css', token.company?.css);
         this.dataService.setStorage('id', token.user?.id);
         this.logoService.setLogo(token.company?.logo);
+        this.logoService.setClassMenu('contenidoHeader');
         // if(token.user?.email === 'user@proyectopar.com') {
         //   this.dataService.setStorage('userId', '8c090cc0-91ea-4e99-8286-ca27bba421b0');
         // } else {
@@ -118,5 +119,6 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {
     this.menuCtrl.enable(false);
+    this.logoService.setClassMenu('contenidoHeaderlogin');
   }
 }

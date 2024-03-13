@@ -23,6 +23,7 @@ export class LogoutPage implements OnInit, AfterContentInit, AfterViewInit, OnDe
     this.dataService.clearStorage();
     this.menuCtrl.enable(false);
     this.logoService.resetLogo();
+    this.logoService.resetClassMenu();
     this.router.navigate(['/'], { replaceUrl: true });
   }
 

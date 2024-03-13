@@ -2,8 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Roboto-Regular', sans-serif;
-
+  color: silver !important;
 }
 
 .mainLogin{
@@ -14,10 +13,16 @@
   .contenPrin{
     position: absolute;
     bottom: 0 !important;
-    color: silver;
     font-weight: bold;
     font-size: 16px !important;
   }
+}
+
+.button-silver-login {
+  --background: #E7E7E7 !important;
+  color: #010927 !important;
+  font-weight: bold;
+  margin: 10px !important;
 }
 
 ion-col{

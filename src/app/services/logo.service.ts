@@ -1,14 +1,13 @@
-import { Storage } from '@ionic/storage-angular';
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { ToastController } from '@ionic/angular';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LogoService {
 
-  logo = "assets/img/logo-content.png";
+  logo = "assets/img/imagen_init.png";
+  css = "src/assets/style/par.css";
+  classMenu = "contenidoHeaderInit";
   bgImage = 'assets/img/loading.png';
   rdn = 1;
 
@@ -42,6 +41,34 @@ export class LogoService {
   private random(): number {
     let rand = Math.floor(Math.random()*8)+1;
     return rand;       
+  }
+
+  public setClassMenu(classMenu: string | undefined){
+    if(classMenu){
+      this.classMenu = classMenu;
+    }
+  }
+  
+  public getClassMenu(){
+    return this.classMenu;
+  }
+
+  public resetClassMenu(){
+    this.classMenu = "contenidoHeaderInit";
+  }
+
+  public setCss(css: string | undefined){
+    if(css){
+      this.css = css;
+    }
+  }
+  
+  public getCss(){
+    return this.css;
+  }
+
+  public resetCss(){
+    this.css = "src/assets/style/par.css";
   }
 
 
