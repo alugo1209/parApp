@@ -13,6 +13,7 @@ export class ApiService {
   //private proxyurl = "https://cors-anywhere.herokuapp.com/"; // borrar
   private urlApiLogin = 'https://score-test.contentgrp.com/api/login';
   private urlApiEdutuberVideos = 'https://score-test.contentgrp.com/api/edutuberVideos/';
+  private urlApiEdutuberVideosLoad = 'https://score-test.contentgrp.com/api/edutuberVideos/Store';
   private urlApi = 'https://aprendeyavanza2.com.co/ApiSilver/api/';
   public apiClients = 'Clients';
   public apiClientsByUser = 'Clients/List/';
@@ -124,5 +125,20 @@ export class ApiService {
   public getNotifications(token: string) {
     return this.http.get(this.urlApi+this.apiUsersGetNotifications,this.getOptions2(token));
   }
+
+  public uploadFile(company_id: string, user_id: string, name: string, description: string, file: Blob, fileName: string) {
+
+    const formData = new FormData();
+    formData.append('user_id', user_id);
+    formData.append('name', name);
+    formData.append('description', description);
+    formData.append('company_id', company_id);
+    console.log(formData.getAll('name'));
+    formData.append('file', file, fileName); 
+
+    return this.http.post(this.urlApiEdutuberVideosLoad, formData);
+
+  }
+
 
 }
