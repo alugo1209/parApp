@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class LogoService {
 
   logo = "assets/img/imagen_init.png";
-  css = "src/assets/style/par.css";
+  css = "assets/style/par.css";
   classMenu = "contenidoHeaderInit";
   bgImage = 'assets/img/loading.png';
   rdn = 1;
@@ -26,7 +26,7 @@ export class LogoService {
   }
 
   public resetLogo(){
-    this.logo = "assets/img/logo-content.png";
+    this.logo = "assets/img/imagen_init.png";
   }
 
   public getBgImage(){
@@ -68,8 +68,26 @@ export class LogoService {
   }
 
   public resetCss(){
-    this.css = "src/assets/style/par.css";
+    this.css = "assets/style/par.css";
   }
 
+  public loadStyle(styleName: string) {
+    console.log(styleName);    
+    const head = document.getElementsByTagName('head')[0];
+    let themeLink = document.getElementById(
+      'client-theme'
+    ) as HTMLLinkElement;
+    if (themeLink) {
+      themeLink.href = `${styleName}`; //<--add assets
+    } else {
+      const style = document.createElement('link');
+      style.id = 'client-theme';
+      style.rel = 'stylesheet';
+      style.type = 'text/css';
+      style.href = `${styleName}`; //<--add assets
+
+      head.appendChild(style);
+    }
+  }
 
 }

@@ -25,6 +25,7 @@ export class AppComponent {
   constructor(private storage: Storage, public logoService: LogoService) {
     this.initializeApp();
     this.logo = logoService.getLogo();
+    logoService.loadStyle(logoService.getCss());
   }
 
   private initializeApp() {
@@ -36,4 +37,5 @@ export class AppComponent {
     //   await this.statusBar.styleLightContent();
     // });
   }
+
 }
