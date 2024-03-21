@@ -68,14 +68,11 @@
 }
 
 .educationLinkVT {
-  color: #E7E7E7;
   text-decoration-line: none;
   font-weight: bold;
 }
 
 .divEducationBlack {
-  background-color: black;
-  color: whitesmoke;
   margin: auto 0;
   text-align: center;
   width: 100%;
@@ -131,7 +128,7 @@
 }
 
 .contentCardP {
-  background-color: #E7E7E7 !important;
+  // background-color: #E7E7E7 !important;
   font-size: 20px;
   font-weight: bold;
 
@@ -140,27 +137,39 @@
   }
 
   ion-item {
-    --background-color: #E7E7E7 !important;
-    --background: #E7E7E7 !important;
+    // --background-color: #E7E7E7 !important;
+    // --background: #E7E7E7 !important;
     color: inherit !important;
   }
 }
 
 .contentCard {
-  --background: #E7E7E7;
+  --background: var(--secondary,#4b5563) !important;
+  // --background: #E7E7E7;
   font-weight: bold;
   font-size: large;
   border-radius: 4%;
   min-height: 10vh !important;
+  ion-label {
+    color: var(--text-secondary,#e5e7eb) !important;
+    --color: var(--text-secondary,#e5e7eb) !important;
+    --color-hover: var(--text-secondary,#e5e7eb) !important;
+  }
   
   .iconList {
-    color: inherit !important;
+    color: var(--text-secondary,#e5e7eb) !important;
   }
 }
 
 .contentCardLi {
-  --background: #E7E7E7;
+  // --background: #E7E7E7;
+  --background: var(--secondary,#4b5563) !important;
   border-radius: 5%;
+  ion-label {
+    color: var(--text-secondary,#e5e7eb) !important;
+    --color: var(--text-secondary,#e5e7eb) !important;
+    --color-hover: var(--text-secondary,#e5e7eb) !important;
+  }
 }
 
 ion-progress-bar::part(track) {
@@ -213,7 +222,8 @@ ion-progress-bar::part(progress) {
 }
 
 .button-silver {
-  --background: #E7E7E7 !important;
+  color: var(--text-secondary,#e5e7eb) !important;
+  --background: var(--secondary,#4b5563) !important;
   font-weight: bold;
   margin: 10px !important;
 }

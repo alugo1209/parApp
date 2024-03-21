@@ -23,23 +23,18 @@ ion-menu.md ion-note {
 }
 
 ion-menu.md ion-list#inbox-list {
-  border-bottom: 1px solid var(--ion-color-step-150, #d7d8da);
+  border-bottom: 1px solid var(--text-principal,#d7d8da) !important;
 }
 
 ion-menu.md ion-list#inbox-list ion-list-header {
   font-size: 22px;
   font-weight: 600;
-
   min-height: 20px;
 }
 
 ion-menu.md ion-list#labels-list ion-list-header {
   font-size: 16px;
-
   margin-bottom: 18px;
-
-  color: #757575;
-
   min-height: 26px;
 }
 
@@ -58,7 +53,7 @@ ion-menu.md ion-item.selected ion-icon {
 }
 
 ion-menu.md ion-item ion-icon {
-  color: #616e7e;
+  color: var(--text-principal,#010927) !important;
 }
 
 ion-menu.md ion-item ion-label {
@@ -85,12 +80,11 @@ ion-menu.ios ion-item {
 }
 
 ion-menu.ios ion-item.selected ion-icon {
-  color: var(--ion-color-primary);
+  color: var(--text-principal,#010927) !important;
 }
 
 ion-menu.ios ion-item ion-icon {
   font-size: 24px;
-  color: #73849a;
 }
 
 ion-menu.ios ion-list#labels-list ion-list-header {
@@ -110,13 +104,33 @@ ion-menu.ios ion-note {
 ion-note {
   display: inline-block;
   font-size: 16px;
-
-  color: var(--ion-color-medium-shade);
 }
 
-ion-item.selected {
-  --color: var(--ion-color-primary);
+ion-item.selected {  
+  --background: var(--primary,#bc6501) !important;
+  ion-label {
+    color: var(--text-primary,#ffffff) !important;
+    --color: var(--text-primary,#ffffff) !important;
+    --color-hover: var(--text-primary,#ffffff) !important;
+  }
 }
+ion-item:hover {  
+  --background: var(--secondary,#4b5563) !important;
+  ion-label {
+    color: var(--text-secondary,#e5e7eb) !important;
+    --color: var(--text-secondary,#e5e7eb) !important;
+    --color-hover: var(--text-secondary,#e5e7eb) !important;
+  }
+}
+ion-item:active {  
+  --background: var(--primary,#bc6501) !important;
+  ion-label {
+    color: var(--text-primary,#ffffff) !important;
+    --color: var(--text-primary,#ffffff) !important;
+    --color-hover: var(--text-primary,#ffffff) !important;
+  }
+}
+
 .imgLogo{
   img{
     height: 4vh;

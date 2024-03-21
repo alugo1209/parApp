@@ -2,7 +2,9 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  color: silver !important;
+  color: var(--text-primary,#E7E7E7) !important;
+  --color: var(--text-primary,#E7E7E7) !important;
+  --color-hover: var(--text-primary,#E7E7E7) !important;
 }
 
 .mainLogin{
@@ -19,8 +21,8 @@
 }
 
 .button-silver-login {
-  --background: #E7E7E7 !important;
-  color: #010927 !important;
+  --background: var(--secondary,#4b5563) !important;
+  color: var(--text-secondary,#e5e7eb) !important;
   font-weight: bold;
   margin: 10px !important;
 }
@@ -32,6 +34,10 @@ ion-col{
 ion-input{
   border-bottom: 2px solid #31306b;
   padding: 2%;
+  input {
+    color: var(--text-primary,#E7E7E7) !important;
+    --color: var(--text-primary,#E7E7E7) !important;
+  }
 }
 
 .btn_eye_icon{
