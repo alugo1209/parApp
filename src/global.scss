@@ -33,7 +33,7 @@
 }
 
 * {
-  color: var(--text-principal,#010927) !important;
+  color: var(--text-principal,#010927);
 }
 
 .imgLogo {
@@ -222,8 +222,8 @@ ion-progress-bar::part(progress) {
 }
 
 .button-silver {
-  color: var(--text-secondary,#e5e7eb) !important;
-  --background: var(--secondary,#4b5563) !important;
+  color: var(--text-primary,#e5e7eb) !important;
+  --background: var(--primary,#4b5563) !important;
   font-weight: bold;
   margin: 10px !important;
 }
@@ -306,4 +306,16 @@ ion-progress-bar::part(progress) {
   position: absolute;
   top: 0;
   width: 100%;
+}
+
+ion-loading.custom-loading {
+  color: var(--text-primary,#010927) !important;
+  --background: transparent !important;
+  --spinner-color: var(--primary,#E7E7E7) !important;
+  font-size: 2rem;
+}
+
+.custom-toast-login {
+  color: var(--text-primary,#010927) !important;
+  --background: var(--primary,#E7E7E7) !important;
 }

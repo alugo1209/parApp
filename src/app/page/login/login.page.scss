@@ -2,9 +2,6 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  color: var(--text-primary,#E7E7E7) !important;
-  --color: var(--text-primary,#E7E7E7) !important;
-  --color-hover: var(--text-primary,#E7E7E7) !important;
 }
 
 .mainLogin{
@@ -21,8 +18,8 @@
 }
 
 .button-silver-login {
-  --background: var(--secondary,#4b5563) !important;
-  color: var(--text-secondary,#e5e7eb) !important;
+  --background: var(--primary,#4b5563) !important;
+  color: var(--text-primary,#e5e7eb) !important;
   font-weight: bold;
   margin: 10px !important;
 }
@@ -62,4 +59,4 @@ ion-input{
   color: var(--ion-color-primary);
   font-size: 12px;
   text-align: center;
- }
+}

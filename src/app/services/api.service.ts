@@ -28,16 +28,27 @@ export class ApiService {
     , private storage: Storage
     ) { }
 
-  async showToast(toastController: ToastController, msg: string | undefined, duration?: number): Promise<void> {
-    const toast = await toastController.create({
-        cssClass: 'custom-toast',
-        message: msg,
-        animated: true,
-        duration: duration ? duration : 2000,
-        mode: 'ios'
-    });
-    toast.present();
-  }
+    async showToast(toastController: ToastController, msg: string | undefined, duration?: number): Promise<void> {
+      const toast = await toastController.create({
+          cssClass: 'custom-toast',
+          message: msg,
+          animated: true,
+          duration: duration ? duration : 2000,
+          mode: 'ios'
+      });
+      toast.present();
+    }
+
+    async showToastLogin(toastController: ToastController, msg: string | undefined, duration?: number): Promise<void> {
+      const toast = await toastController.create({
+          cssClass: 'custom-toast-login',
+          message: msg,
+          animated: true,
+          duration: duration ? duration : 2000,
+          mode: 'ios'
+      });
+      toast.present();
+    }
 
   private getOptionsLogin(): { headers: HttpHeaders } {
     const header = new HttpHeaders()

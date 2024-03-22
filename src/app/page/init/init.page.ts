@@ -19,7 +19,9 @@ export class InitPage implements OnInit, AfterContentInit, AfterViewInit, OnDest
     , public menuCtrl: MenuController
     , private dataService: ApiService
     , public logoService: LogoService
-    ) { }
+    ) {
+      this.logoService.resetCss();
+    }
 
   public login(){
     this.menuCtrl.enable(true);

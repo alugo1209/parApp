@@ -1,5 +1,5 @@
 import { Router } from '@angular/router';
-import { MenuController, ToastController } from '@ionic/angular';
+import { LoadingController, MenuController, ToastController } from '@ionic/angular';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { Token } from 'src/app/class/user/token';
@@ -33,25 +33,37 @@ export class LoginPage implements OnInit {
   email: string = '';
   password: string = '';
 
+  loading: any;
+
   constructor(
     private router: Router
     , private toastCtrl: ToastController
     , public dataService: ApiService
     , public menuCtrl: MenuController
     , public logoService: LogoService
-  ) {}
+    ,private loadingCtrl: LoadingController
+  ) {    
+    this.logoService.resetCss();
+  }
 
   private getData() {
+    this.showLoading();
     this.dataService.setStorage('ingreso', false);
     this.dataService.ingreso = false;
-    this.dataService.getLogin(this.email, this.password).subscribe((result) => {
+    this.dataService.getLogin(this.email, this.password)
+    .subscribe((result) => {
       this.getDataResult(result);
-    });
+    }, (err) => {
+      this.loading.dismiss();
+      this.dataService.showToastLogin(this.toastCtrl, err.statusText); 
+    }
+    );
   }
 
   private getDataResult(data: any) {
+    this.loading.dismiss();
     if (data.error) {
-      this.dataService.showToast(this.toastCtrl, data.statusText);
+      this.dataService.showToastLogin(this.toastCtrl, data.statusText);
     } else {
       const dataToken = data;
       const token: Token = dataToken;
@@ -121,4 +133,17 @@ export class LoginPage implements OnInit {
     this.menuCtrl.enable(false);
     this.logoService.setClassMenu('contenidoHeaderlogin');
   }
+
+  async showLoading() {
+    this.loading = await this.loadingCtrl.create({
+      message: 'Espere...'
+      , cssClass: 'custom-loading'
+      , id: 'loginLoading'
+      , spinner: 'circles'
+      , translucent: true
+    });
+
+    this.loading.present();
+  }
+  
 }

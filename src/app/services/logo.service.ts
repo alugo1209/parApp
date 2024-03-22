@@ -69,6 +69,7 @@ export class LogoService {
 
   public resetCss(){
     this.css = "assets/style/par.css";
+    this.loadStyle(this.css);
   }
 
   public loadStyle(styleName: string) {
