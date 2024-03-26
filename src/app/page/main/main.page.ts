@@ -57,8 +57,6 @@ export class MainPage implements OnInit, AfterContentInit, AfterViewInit, OnDest
         this.logoService.setLogo(data);
         this.logoService.setClassMenu('contenidoHeader');
         this.logoService.resetCss();
-        this.logoService.setCss('assets/style/par2.css');
-        this.logoService.loadStyle(this.logoService.getCss());
       }
     });
     this.dataService.getStorage('css')

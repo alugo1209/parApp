@@ -73,6 +73,7 @@ export class LoginPage implements OnInit {
         this.dataService.setStorage('token', token.token);
         this.dataService.setStorage('user', token.user);
         this.dataService.setStorage('tokenFull', token);
+        this.dataService.setStorage('company', token.company);
         this.dataService.setStorage('companyId', token.company?.id);
         this.dataService.setStorage('logo', token.company?.logo);
         this.dataService.setStorage('css', token.company?.css);

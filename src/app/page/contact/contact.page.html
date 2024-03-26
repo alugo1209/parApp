@@ -1,13 +1,21 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>contact</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">contact</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="contenidoDiv">
+  <ion-card>
+    <ion-card-header>
+      <p class="tituloPage">Contacto</p>
+    </ion-card-header>
+  </ion-card>
+  <ion-grid  id="inbox-list1">
+    <ion-row class="ion-align-items-center">
+      <ion-col size="12">
+        <ion-label class="politicaC">{{lblInformacion}}</ion-label>
+        <ion-label class="datosC">{{lblCorreo}}</ion-label>
+        <ion-label class="politicaC">{{lblresto}}</ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-card class="contentDiv-button-list">
+    <div>
+      <ion-button class="button-silver" expand="block" start (click)="regresar()">REGRESAR</ion-button>
+    </div>
+  </ion-card>
 </ion-content>
