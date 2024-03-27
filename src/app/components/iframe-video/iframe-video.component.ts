@@ -27,7 +27,6 @@ export class IframeVideoComponent  implements OnChanges {
   }
 
   cleanURL(oldURL: any): SafeResourceUrl {
-    console.log(oldURL);
     return this.sanitizer.bypassSecurityTrustResourceUrl(oldURL); 
   }
 

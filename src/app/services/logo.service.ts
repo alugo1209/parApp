@@ -73,7 +73,6 @@ export class LogoService {
   }
 
   public loadStyle(styleName: string) {
-    console.log(styleName);    
     const head = document.getElementsByTagName('head')[0];
     let themeLink = document.getElementById(
       'client-theme'

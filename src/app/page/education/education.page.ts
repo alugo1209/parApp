@@ -5,6 +5,7 @@ import { ModuleClient } from 'src/app/class/education/moduleByClient/module';
 import { Modules } from 'src/app/class/education/moduleByClient/modules';
 import { ModuleNro } from 'src/app/class/education/moduleByClient/moduleNro';
 import { ApiService } from 'src/app/services/api.service';
+import { LogoService } from 'src/app/services/logo.service';
 
 @Component({
   selector: 'app-education',
@@ -21,6 +22,7 @@ export class EducationPage implements AfterViewInit {
 
   constructor(
     private router: Router
+    , public logoService: LogoService
     , private toastCtrl: ToastController
     , public dataService: ApiService) { }
 
@@ -44,6 +46,21 @@ export class EducationPage implements AfterViewInit {
         if (data) {
           this.token = data;
           this.getClientsById();
+        }
+      });
+      this.dataService.getStorage('logo')
+      .then((data: any) => {
+        if (data) {
+          this.logoService.setLogo(data);
+          this.logoService.setClassMenu('contenidoHeader');
+          this.logoService.resetCss();
+        }
+      });
+      this.dataService.getStorage('css')
+      .then((data: any) => {
+        if (data) {
+          this.logoService.setCss(data);
+          this.logoService.loadStyle(this.logoService.getCss());
         }
       });
     }
@@ -72,6 +89,6 @@ export class EducationPage implements AfterViewInit {
     }
 
     public gotoCategory(catId: any, modId: any){
-      this.router.navigate(['/education/details/' + catId + '/' + modId]);
+      this.router.navigate(['/education/category/' + catId + '/' + modId]);
     }
 }

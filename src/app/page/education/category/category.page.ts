@@ -8,11 +8,11 @@ import { TopicsCourse } from 'src/app/class/education/moduleDetails/topicsCourse
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
-  selector: 'app-details-all',
-  templateUrl: './details-all.page.html',
-  styleUrls: ['./details-all.page.scss'],
+  selector: 'app-category',
+  templateUrl: './category.page.html',
+  styleUrls: ['./category.page.scss'],
 })
-export class DetailsAllPage implements OnInit {
+export class CategoryPage implements OnInit { 
 
   catId!: number;
   modId!: number;
@@ -22,6 +22,7 @@ export class DetailsAllPage implements OnInit {
   result: Array<TopicsCourse> = [];
   cat_Name: string = "";
   modu_Name: string = "";
+  modu_ImageName: string = "";
 
   constructor(
     private router: Router
@@ -86,21 +87,33 @@ export class DetailsAllPage implements OnInit {
     }
   
     private getDataResult(data: any) {
+      this.result = [];
       if (data.error) {
         this.dataService.showToast(this.toastCtrl, data.statusText);
       } else {
         const dataTemp: ModuleDetail = data.result;
         this.modulo = dataTemp.module;
         this.modu_Name = this.modulo.modu_Name;
-        this.result = dataTemp.topicsCourse;
-        for (let index = 0; index < this.result.length; index++) {
-          const element = this.result[index];
-          this.dataService.setStorage('toCo'+element.toCo_Id, element);          
+        this.modu_ImageName = this.modulo.modu_ImageName;
+        const resultTemp: Array<TopicsCourse> = dataTemp.topicsCourse;
+        let size = resultTemp.length;
+        if(size >= 2) {
+          size = 2;
+        }     
+        for (let index = 0; index < size; index++) {
+          let element = resultTemp[index];
+          element.modu_Name = this.modu_Name;
+          this.dataService.setStorage('toCo'+element.toCo_Id, element); 
+          this.result.push(element);      
         }
       }
     }
   
     public regresar() {
-      this.router.navigate(['/education/details/' + this.catId + '/' + this.modId]);
+      this.router.navigate(['/education']);
+    }  
+
+    public gotoCategory(modId: any){
+      this.router.navigate(['/education/category-all/' + this.catId + '/' + modId]);
     }
 }

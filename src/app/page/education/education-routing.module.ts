@@ -9,12 +9,16 @@ const routes: Routes = [
     component: EducationPage
   },
   {
-    path: 'details/:catId/:modId',
-    loadChildren: () => import('./details/details.module').then( m => m.DetailsPageModule)
+    path: 'category/:catId/:modId',
+    loadChildren: () => import('./category/category.module').then( m => m.CategoryPageModule)
   },
   {
-    path: 'details-all/:catId/:modId',
-    loadChildren: () => import('./details-all/details-all.module').then( m => m.DetailsAllPageModule)
+    path: 'category-all/:catId/:modId',
+    loadChildren: () => import('./category-all/category-all.module').then( m => m.CategoryAllPageModule)
+  },
+  {
+    path: 'category-detail/:topicId',
+    loadChildren: () => import('./category-detail/category-detail.module').then( m => m.CategoryDetailPageModule)
   }
 ];
 

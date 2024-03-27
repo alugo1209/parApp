@@ -34,8 +34,7 @@ export class EdutuberPage implements AfterViewInit {
         .then((data: any) => {
           if (data) {
             this.edutuber = data;  
-            this.videot = this.edutuber.url;
-            console.log(this.videot);            
+            this.videot = this.edutuber.url;         
           }
         });
     }

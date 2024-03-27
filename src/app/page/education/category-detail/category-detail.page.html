@@ -1,0 +1,25 @@
+<ion-content class="contenidoDiv">
+  <ion-card>
+    <ion-card-header>
+      <p class="tituloPage1">{{topicsCourse.modu_Name}}</p>
+    </ion-card-header>
+  </ion-card>
+  <ion-card id="inbox-list1">
+    <div *ngIf="htmlflag">
+      <iframe [srcdoc]="html" style="border: none; width: 100%; height: 50vh;"></iframe>
+    </div>
+    <div *ngIf="contentflag">
+      <iframe [src]="content" style="border: none; width: 100%; height: 50vh;"></iframe>
+    </div>
+    <ion-card>
+      <ion-label class="titleLabel2">
+        <div id="div1">Topic: {{topicsCourse.toCo_Name}}</div>
+      </ion-label>
+    </ion-card>
+  </ion-card>
+  <ion-card class="contentDiv-button-list">
+    <div>
+      <ion-button class="button-silver" expand="block" start (click)="regresar()">REGRESAR</ion-button>
+    </div>
+  </ion-card>
+</ion-content>

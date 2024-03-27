@@ -10,13 +10,12 @@
       <ion-card-content>
         <ion-label class="titleLabel">
           <div id="div1">{{modu_Name}}</div>
-          <div id="div2" (click)="gotoCategory(modulo.modu_Id)">Ver Todo</div>
         </ion-label>
-        <div *ngFor="let p of result; let i = index" class="spanIframe">
-          <app-detail-virtual [toCoId]="p.toCo_Id"></app-detail-virtual>
-        </div>
       </ion-card-content>
     </ion-card>
+    <ion-card *ngFor="let p of result; let i = index">
+      <app-category-content [modu_ImageName]="modu_ImageName" [topicsCourse]="p"></app-category-content>
+    </ion-card> 
   </ion-list>
   <ion-card class="contentDiv-button-list">
     <div >

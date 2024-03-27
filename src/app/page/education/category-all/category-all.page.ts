@@ -5,15 +5,14 @@ import { ModuleClient } from 'src/app/class/education/moduleByClient/module';
 import { Module } from 'src/app/class/education/moduleDetails/module';
 import { ModuleDetail } from 'src/app/class/education/moduleDetails/moduleDetail';
 import { TopicsCourse } from 'src/app/class/education/moduleDetails/topicsCourse';
-
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
-  selector: 'app-details',
-  templateUrl: './details.page.html',
-  styleUrls: ['./details.page.scss'],
+  selector: 'app-category-all',
+  templateUrl: './category-all.page.html',
+  styleUrls: ['./category-all.page.scss'],
 })
-export class DetailsPage implements OnInit {
+export class CategoryAllPage implements OnInit { 
 
   catId!: number;
   modId!: number;
@@ -23,6 +22,7 @@ export class DetailsPage implements OnInit {
   result: Array<TopicsCourse> = [];
   cat_Name: string = "";
   modu_Name: string = "";
+  modu_ImageName: string = "";
 
   constructor(
     private router: Router
@@ -87,16 +87,21 @@ export class DetailsPage implements OnInit {
     }
   
     private getDataResult(data: any) {
+      this.result = [];
       if (data.error) {
         this.dataService.showToast(this.toastCtrl, data.statusText);
       } else {
         const dataTemp: ModuleDetail = data.result;
         this.modulo = dataTemp.module;
         this.modu_Name = this.modulo.modu_Name;
-        this.result = dataTemp.topicsCourse;
-        for (let index = 0; index < this.result.length; index++) {
-          const element = this.result[index];
-          this.dataService.setStorage('toCo'+element.toCo_Id, element);          
+        this.modu_ImageName = this.modulo.modu_ImageName;
+        const resultTemp: Array<TopicsCourse> = dataTemp.topicsCourse;
+        let size = resultTemp.length;
+        for (let index = 0; index < size; index++) {
+          let element = resultTemp[index];
+          element.modu_Name = this.modu_Name;
+          this.dataService.setStorage('toCo'+element.toCo_Id, element); 
+          this.result.push(element);         
         }
       }
     }
@@ -104,8 +109,4 @@ export class DetailsPage implements OnInit {
     public regresar() {
       this.router.navigate(['/education']);
     }  
-
-    public gotoCategory(modId: any){
-      this.router.navigate(['/education/details-all/' + this.catId + '/' + modId]);
-    }
 }

@@ -60,13 +60,9 @@ export class NewExperiencePage implements OnInit {
   }
   
   private getDataResult(data: any) {
-    if (data.error) {
-      console.log("error"); 
-      console.log(data);    
+    if (data.error) {    
       this.dataService.showToast(this.toastCtrl, data);
-    } else {     
-      console.log("data");      
-      console.log(data);    
+    } else {         
       const message = data.message;
       this.dataService.showToast(this.toastCtrl, message);
       setTimeout(() => {
